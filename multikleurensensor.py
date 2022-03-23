@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO
 class multikleurensensor:
 
     def __init__(self, in1, in2, in3, in4, in5, in6, in7, in8, vcc, gnd):
+
     # --- Setup ---
         self.in1 = in1
         self.in2 = in2
@@ -14,16 +15,19 @@ class multikleurensensor:
         self.in8 = in8
         self.vcc = vcc
         self.gnd = gnd
-        all_in = [in1, in2, in3, in4, in5, in6,in7, in8]
-
-        print(all_in)
+        self.all_in = [in1, in2, in3, in4, in5, in6, in7, in8]
         
     # --- Setup ---
 
     def get_data(self):
-        #for i in 
-        pass
+        for i in range(self.all_in):
+            GPIO.setup(i, GPIO.IN) # Zet de status van alle pinnen naar input
 
-"""Gewoon even een kleine test of alles werkt :D"""
-if __name__ == '__main__':
-    multikleurensensor(40,2,3,4,5,9,7,8,9,10)
+        """
+        Ik weet niet hoe het verder ging, en do pololu documentation was niet heel duidelijk
+        Kunnen we hier later aan werken? D:
+        
+        """
+        
+        
+
