@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-class multikleurensensor:
+class multicolor:
 
     def __init__(self, in1, in2, in3, in4, in5, in6, in7, in8, vcc, gnd):
 
