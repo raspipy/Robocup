@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
-GPIO.set_mode(GPIO.BOARD) # Sets the GPIO mode to BOARD
-class kleurensensors():
+GPIO.setmode(GPIO.BOARD) # Sets the GPIO mode to BOARD
+class kleurensensor():
     def __init__(self, out_pins, in_pins):
         self.out_pins = out_pins
         self.in_pins = in_pins
