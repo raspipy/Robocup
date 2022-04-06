@@ -22,9 +22,11 @@ class multicolor:
     def get_data(self):
         for i in range(self.all_in):
             GPIO.setup(i, GPIO.IN) # Zet de status van alle pinnen naar input
+            
+        
 
         """
-        Ik weet niet hoe het verder ging, en do pololu documentation was niet heel duidelijk
+        Ik weet niet hoe het verder ging, de pololu documentation was niet heel duidelijk
         Kunnen we hier later aan werken? D:
         
         """
