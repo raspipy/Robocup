@@ -1,39 +1,15 @@
-
-#############################
-#     importing libarys     #
-#############################
+import RPi.GPIO as GPIO
 
 from classes.lijnsensor import lijnsensor
-from classes.ultrasonesensor import ultrasonesensor
 from classes.motor import motor
 
-#############################
-#     variables             #
-#############################
+GPIO.setwarnings(False)
 
-motor_pins = []
-lijnsensor_pins = []
-ultrasonesensor_pins = []
-kleurensensor = []
-motor1 = motor([])
-motor2 = motor([])
+lijnsensor = lijnsensor([11, 13, 15, 19, 21, 23, 29, 31])
+print(lijnsensor.readData())
 
-#############################
-#     intalize              #
-#############################
+motor1 = motor([35,37,32,8])
+while True:
+    motor1.drive(0)
 
-invoer = input("Hou nu zwart onder de robot (een blad) en type iets en klik enter om verder te gaan: ")
-zwart = invoer
-invoer = input("Hou nu geel onder de robot (een blad) en type iets en klik enter om verder te gaan: ")
-geel = invoer
-invoer = input("Hou nu groen onder de robot (een blad) en type iets en klik enter om verder te gaan: ")
-groen = invoer
-
-#############################
-#     driving               #
-#############################
-
-
-#############################
-#           end             #
-#############################
+GPIO.cleanup()
