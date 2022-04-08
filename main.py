@@ -15,6 +15,6 @@ kleurensensoren = kleurensensor([40, 38, 36, 26], [22, 18])
 print(kleurensensoren.get_data())
 
 while True:
-    motor1.drive(0)
+    motor1.drive(50)
 
 GPIO.cleanup()
