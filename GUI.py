@@ -1,13 +1,14 @@
-from tkinter import *
+import neat
 
-class GUI(Tk):
-    def __init__(self):
-        self.__init__()
-        self.title("Raspberrypi Robot Tester")
-        self.geometry("500x500")
-        self.resizable(0,0)
-        self.configure(background="white")
-        self.__create_widgets()
 
-if __name__ == "__main__":
-    GUI()
+net = neat.nn.FeedForwardNetwork.create(config)
+
+
+inputs= [0.7,08.9,0.5,0.6] 
+output = [0.1,0.2,0.3,0.4]
+# Train a neat AI using the inputs data without supervision
+model = neat.nn.FeedForwardNetwork.create(net, config)
+model.train(inputs, output)
+
+
+    

@@ -16,12 +16,14 @@ class ultrasonesensor:
         
         # --- Measurement --- 
         GPIO.setup(self.pin, GPIO.IN)
-        while GPIO.input(self.pin) != 1:
-            pass
+        GPIO.wait_for_edge(self.pin, GPIO.RISING)
+
         begin_tijd = time.time_ns()
-        while GPIO.input(self.pin) != 0:
-            pass
+
+        GPIO.wait_for_edge(self.pin, GPIO.FALLING)
+
         eind_tijd = time.time_ns()
+        
         return ((begin_tijd - eind_tijd)/ 2 * 34 /1000000)
 
 
