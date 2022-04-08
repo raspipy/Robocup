@@ -19,7 +19,7 @@ print(kleurensensoren.get_data_full())
 
 while True:
     print(ultrasonesensor.get_data())
-    time.sleep(0.1)
+    time.sleep(0.4)
     motor1.drive(random.randint(0, 100))
 
 GPIO.cleanup()
