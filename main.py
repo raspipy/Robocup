@@ -18,7 +18,7 @@ kleurensensoren = kleurensensor([40, 38, 36, 26], [22, 18])
 print(kleurensensoren.get_data_full())
 
 while True:
-    print(ultrasonesensor.get_data())
+    print(str(ultrasonesensor.get_data()) + " cm")
     time.sleep(0.4)
     motor1.drive(random.randint(0, 100))
 
