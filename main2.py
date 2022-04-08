@@ -14,7 +14,17 @@ from classes.motor import motor
 motor_pins = []
 lijnsensor_pins = []
 ultrasonesensor_pins = []
-kleurensensor = []
+kleurensensor_pins_in = []
+kleurensensor_pins_out = []
+
+#############################
+#     objects               #
+#############################
+
+lijnsensor = lijnsensor(lijnsensor_pins)
+
+kleurensensor = kleurensensor(kleurensensor_pins_out,kleurensensor_pins_in)
+
 motor1 = motor([])
 motor2 = motor([])
 
@@ -23,15 +33,16 @@ motor2 = motor([])
 #############################
 
 invoer = input("Hou nu zwart onder de robot (een blad) en type iets en klik enter om verder te gaan: ")
-zwart = invoer
+zwart = kleurensensor.get_data_full()
 invoer = input("Hou nu geel onder de robot (een blad) en type iets en klik enter om verder te gaan: ")
-geel = invoer
+geel = kleurensensor.get_data_full()
 invoer = input("Hou nu groen onder de robot (een blad) en type iets en klik enter om verder te gaan: ")
-groen = invoer
+groen = kleurensensor.get_data_full()
 
 #############################
 #     driving               #
 #############################
+
 
 
 #############################
