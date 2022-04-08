@@ -3,9 +3,11 @@
 #     importing libarys     #
 #############################
 
+from time import sleep
 from classes.lijnsensor import lijnsensor
 from classes.ultrasonesensor import ultrasonesensor
 from classes.motor import motor
+from classes.kleurensensor import kleurensensor
 
 #############################
 #     variables             #
