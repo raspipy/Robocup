@@ -16,11 +16,12 @@ class ultrasonesensor:
         
         # --- Measurement --- 
         GPIO.setup(self.pin, GPIO.IN)
-        GPIO.wait_for_edge(self.pin, GPIO.RISING)
+        GPIO.wait_for_edge(self.pin, GPIO.RISING, timeout=100)
 
         begin_tijd = time.time_ns()
 
-        GPIO.wait_for_edge(self.pin, GPIO.FALLING)
+        GPIO.wait_for_edge(self.pin, GPIO.FALLING timeout=100)
+
 
         eind_tijd = time.time_ns()
 
