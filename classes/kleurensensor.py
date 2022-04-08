@@ -21,11 +21,13 @@ class kleurensensor():
     def get_data_full(self):
         # --- Sensor 1 --- #
 
-        GPIO.wait_for_edge(self.in_pins[0], GPIO.BOTH)
-
+        rising = GPIO.wait_for_edge(self.in_pins[0], GPIO.BOTH, timeout=100)
+        if rising is None:
+            print("Timeout occured")
+            return self.get_data_full()
         begin_tijd = time.time_ns()
 
-        GPIO.wait_for_edge(self.in_pins[0], GPIO.BOTH)
+        GPIO.wait_for_edge(self.in_pins[0], GPIO.BOTH, timeout=100)
 
         tijdsduur1 = time.time_ns() - begin_tijd
         # --- Sensor 2 --- #
