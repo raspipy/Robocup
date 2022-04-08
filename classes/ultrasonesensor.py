@@ -23,8 +23,8 @@ class ultrasonesensor:
         GPIO.wait_for_edge(self.pin, GPIO.FALLING)
 
         eind_tijd = time.time_ns()
-        
-        return ((begin_tijd - eind_tijd)/ 2 * 34 /1000000)
+
+        return ((eind_tijd- begin_tijd)/ 2 * 34 /1000000)
 
 
 
