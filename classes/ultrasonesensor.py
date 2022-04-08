@@ -16,13 +16,16 @@ class ultrasonesensor:
         
         # --- Measurement --- 
         GPIO.setup(self.pin, GPIO.IN)
-        GPIO.wait_for_edge(self.pin, GPIO.RISING, timeout=100)
+        rising = GPIO.wait_for_edge(self.pin, GPIO.RISING, timeout=100)
+        if rising is None:
+            self.get_data()
+            print("Timeout occured")
 
         begin_tijd = time.time_ns()
 
-        GPIO.wait_for_edge(self.pin, GPIO.FALLING timeout=100)
+        falling = GPIO.wait_for_edge(self.pin, GPIO.FALLING timeout=100)
 
-
+        
         eind_tijd = time.time_ns()
 
         return ((eind_tijd- begin_tijd)/ 2 * 34 /1000000)
