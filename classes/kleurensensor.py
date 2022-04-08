@@ -18,7 +18,7 @@ class kleurensensors():
 
         GPIO.output(self.out_pins[3], GPIO.HIGH)
 
-    def get_data(self):
+    def get_data_full(self):
         # --- Sensor 1 --- #
 
         GPIO.wait_for_edge(self.in_pins[0], GPIO.BOTH)
