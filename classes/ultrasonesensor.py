@@ -24,7 +24,9 @@ class ultrasonesensor:
         begin_tijd = time.time_ns()
 
         falling = GPIO.wait_for_edge(self.pin, GPIO.FALLING, timeout=100)
-
+        if falling is None:
+            print("Timeout occured")
+            return self.get_data()
         
         eind_tijd = time.time_ns()
 
