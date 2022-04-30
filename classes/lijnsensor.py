@@ -1,6 +1,5 @@
 import RPi.GPIO as PI
 import time
-from main import FileLoc
 
 PI.setmode(PI.BOARD)
 
