@@ -8,7 +8,7 @@ class lijnsensor:
         self.pins = pins
         PI.setup(7, PI.OUT)
         PI.output(7, PI.HIGH)
-        FileLoc = "calibratie_waarden.txt"
+        FileLoc = "classes/calibratie_waarden.txt"
         File = open(FileLoc,"r")
         FileData = File.readline(1)
         File.close
