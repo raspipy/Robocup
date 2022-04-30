@@ -12,6 +12,7 @@ for i in range(5):
 for i in range(len(data_raw)):
     data = data + data_raw[i]
 data = data / len(data_raw)
+print(data)
 
 
 GPIO.cleanup()
