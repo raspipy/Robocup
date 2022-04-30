@@ -1,13 +1,23 @@
 import RPi.GPIO as PI
 import time
 
+from main import FileLoc
+
+
+
 PI.setmode(PI.BOARD)
 
 class lijnsensor:
+
     def __init__ (self, pins):
         self.pins = pins
         PI.setup(7, PI.OUT)
         PI.output(7, PI.HIGH)
+        FileLoc = "classes/calibratie.txt"
+        File = open(FileLoc,"r")
+        FileData = File.readline(1)
+        File.close
+        self.calibration = FileData
         
     def get_data_raw(self):
         for each in self.pins:
@@ -30,11 +40,10 @@ class lijnsensor:
 
 
     def get_data(self):
-        calibration = [[114.2, 227.6, 156.4, 472.6, 265.2, 176.6, 188.0, 178.4], [127.6, 208.6, 158.4, 473.8, 267.2, 178.4, 189.8, 201.0]]
         raw_data = self.get_data_raw()
         result = []
         for i in range(0,8):
-            if abs(raw_data[i] - calibration[0][i]) < abs(raw_data[i] - calibration[1][i]):
+            if abs(raw_data[i] - self.calibration[0][i]) < abs(raw_data[i] - self.calibration[1][i]):
                 result.append(1)
             else:
                 result.append(0)
