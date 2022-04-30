@@ -12,7 +12,7 @@ class lijnsensor:
         File = open(FileLoc,"r")
         FileData = File.readline(1)
         File.close
-        self.calibration = FileData
+        self.calibration = FileData.strip('][').split(', ')
         
     def get_data_raw(self):
         for each in self.pins:
