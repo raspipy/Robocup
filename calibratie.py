@@ -1,6 +1,6 @@
 from classes.lijnsensor import lijnsensor
 import RPi.GPIO as GPIO
-
+import os
 
 GPIO.setwarnings(False)
 lijnsensor = lijnsensor([11, 13, 15, 19, 21, 23, 29, 31])
@@ -17,5 +17,13 @@ print(data)
 
 def Save(Loc,Data):
     File = open(Loc,"w")
-    File.write(data)
+    if os.stat(Loc).st_size == 0:
+        File.write(Data)
+        File.close()
+    else:
+        File.seek(0)
+        File.truncate()
+        File.write(Data)
+        File.close()
+Save("calibratie_waarden.txt",str(data))
 GPIO.cleanup()
