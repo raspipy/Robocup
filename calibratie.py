@@ -15,6 +15,18 @@ for i in range(8):
     data[i] = data[i] / 5
 print(data)
 
+data_raw = []
+data_white = []
+
+for i in range(5):
+    input("Zet op een ander plaats op het wit!")
+    data_raw = lijnsensor.get_data()
+    for y in range(8):
+        data_white[y] += data_raw[y]
+for i in range(8):
+    data_white[i] = data_white[i] / 5
+full_data = [data,data_white]
+
 def Save(Loc,Data):
     File = open(Loc,"w")
     if os.stat(Loc).st_size == 0:
@@ -25,5 +37,5 @@ def Save(Loc,Data):
         File.truncate()
         File.write(Data)
         File.close()
-Save("calibratie_waarden.txt",str(data))
+Save("calibratie_waarden.txt",str(full_data))
 GPIO.cleanup()
