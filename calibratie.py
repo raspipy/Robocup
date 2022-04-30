@@ -15,4 +15,7 @@ for i in range(8):
     data[i] = data[i] / 5
 print(data)
 
+def Save(Loc,Data):
+    File = open(Loc,"w")
+    File.write(data)
 GPIO.cleanup()
