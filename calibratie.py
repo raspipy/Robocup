@@ -10,7 +10,7 @@ for i in range(5):
     input("Zet op een ander plaats op het zwart")
     data_raw = lijnsensor.get_data()
     for y in range(8):
-        data[i] += data_raw[i]
+        data[y] += data_raw[y]
 for i in range(8):
     data[i] = data[i] / 5
 print(data)
