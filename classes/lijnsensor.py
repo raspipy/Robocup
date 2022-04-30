@@ -25,5 +25,5 @@ class lijnsensor:
                 sum += PI.input(each)
             for i in range(0,8):
                 if PI.input(self.pins[i]) == 0  and resultaten[i] == 0:
-                    resultaten[i] = (time.time_ns() - beginTime) / 1000
+                    resultaten[i] = int((time.time_ns() - beginTime) / 1000)
         return resultaten
