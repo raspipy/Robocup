@@ -16,7 +16,7 @@ for i in range(8):
 print(data)
 
 data_raw = []
-data_white = []
+data_white = [0,0,0,0,0,0,0,0]
 
 for i in range(5):
     input("Zet op een ander plaats op het wit!")
