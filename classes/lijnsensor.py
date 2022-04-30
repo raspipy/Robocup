@@ -11,7 +11,7 @@ class lijnsensor:
         for each in self.pins:
             PI.setup(each,PI.OUT)
             PI.output(each,1)
-        time.sleep(0.001)
+        time.sleep(0.00001)
         for each in self.pins:
             PI.setup(each,PI.IN)
         sum = 8
@@ -22,6 +22,6 @@ class lijnsensor:
             for each in self.pins:
                 sum += PI.input(each)
             for i in range(0,8):
-                if PI.input(self.pins[i]) == 0:
+                if PI.input(self.pins[i]) ==  and resultaten[i] == 0:
                     resultaten[i] = time.time_ns() - beginTime
         return resultaten
