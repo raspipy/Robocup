@@ -6,6 +6,8 @@ PI.setmode(PI.BOARD)
 class lijnsensor:
     def __init__ (self, pins):
         self.pins = pins
+        PI.setup(7, GPIO.OUT)
+        PI.output(7, GPIO.HIGH)
         
     def get_data(self):
         for each in self.pins:
