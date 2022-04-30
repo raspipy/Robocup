@@ -8,7 +8,7 @@ data_raw = []
 data = [0,0,0,0,0,0,0,0]
 for i in range(5):
     input("Zet op een ander plaats op het zwart")
-    data_raw = lijnsensor.get_data()
+    data_raw = lijnsensor.get_data_raw()
     for y in range(8):
         data[y] += data_raw[y]
 for i in range(8):
@@ -20,7 +20,7 @@ data_white = [0,0,0,0,0,0,0,0]
 
 for i in range(5):
     input("Zet op een ander plaats op het wit!")
-    data_raw = lijnsensor.get_data()
+    data_raw = lijnsensor.get_data_raw()
     for y in range(8):
         data_white[y] += data_raw[y]
 for i in range(8):
