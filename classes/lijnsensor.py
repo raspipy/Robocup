@@ -1,14 +1,10 @@
 import RPi.GPIO as PI
 import time
-
 from main import FileLoc
-
-
 
 PI.setmode(PI.BOARD)
 
 class lijnsensor:
-
     def __init__ (self, pins):
         self.pins = pins
         PI.setup(7, PI.OUT)
@@ -37,7 +33,6 @@ class lijnsensor:
                 if PI.input(self.pins[i]) == 0  and resultaten[i] == 0:
                     resultaten[i] = int((time.time_ns() - beginTime) / 1000)
         return resultaten
-
 
     def get_data(self):
         raw_data = self.get_data_raw()
