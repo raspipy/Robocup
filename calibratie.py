@@ -37,5 +37,5 @@ def Save(Loc,Data):
         File.truncate()
         File.write(Data)
         File.close()
-Save("calibratie_waarden.txt",str(full_data))
+Save("classes/calibratie_waarden.txt",str(full_data))
 GPIO.cleanup()

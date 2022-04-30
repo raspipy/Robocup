@@ -11,7 +11,7 @@ import RPi.GPIO as GPIO
 #############################
 #     variables             #
 #############################
-FileLoc = "calibratie_waarden.txt"
+FileLoc = "classes/calibratie_waarden.txt"
 
 lijnsensor = lijnsensor([11, 13, 15, 19, 21, 23, 29, 31])
 kleurensensoren = kleurensensor([40, 38, 36, 26], [22, 18])
