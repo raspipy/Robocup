@@ -9,7 +9,7 @@ class json_loader:
     def load(self):
         f = open(self.file,"r")
 
-        data = json.loads(f)
+        data = json.loads(f.read())
 
         result_black = None
 
