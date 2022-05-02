@@ -1,6 +1,7 @@
 import RPi.GPIO as PI
 import time
-
+import json
+from classes.json_loader import json_loader
 PI.setmode(PI.BOARD)
 
 class lijnsensor:
@@ -8,11 +9,8 @@ class lijnsensor:
         self.pins = pins
         PI.setup(7, PI.OUT)
         PI.output(7, PI.HIGH)
-        FileLoc = "classes/calibratie_waarden.txt"
-        File = open(FileLoc,"r")
-        FileData = File.readline(1)
-        File.close
-        self.calibration = FileData.strip('][').split(', ')
+
+        self.calibration = json_loader("classes/calibratie_waarden.json").load()
         
     def get_data_raw(self):
         for each in self.pins:
@@ -36,7 +34,6 @@ class lijnsensor:
     def get_data(self):
         raw_data = self.get_data_raw()
         result = []
-        print(self.calibration)
         for i in range(0,8):
             if abs(raw_data[i] - self.calibration[0][i]) < abs(raw_data[i] - self.calibration[1][i]):
                 result.append(1)

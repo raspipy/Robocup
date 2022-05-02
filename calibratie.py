@@ -1,7 +1,8 @@
 from classes.lijnsensor import lijnsensor
 import RPi.GPIO as GPIO
 import os
-
+import json
+from classes.json_loader import json_loader
 GPIO.setwarnings(False)
 lijnsensor = lijnsensor([11, 13, 15, 19, 21, 23, 29, 31])
 data_raw = []
@@ -27,15 +28,18 @@ for i in range(8):
     data_white[i] = data_white[i] / 5
 full_data = [data,data_white]
 
-def Save(Loc,Data):
-    File = open(Loc,"w")
-    if os.stat(Loc).st_size == 0:
-        File.write(Data)
-        File.close()
-    else:
-        File.seek(0)
-        File.truncate()
-        File.write(Data)
-        File.close()
-Save("classes/calibratie_waarden.txt",str(full_data))
+json_loader("./calibratie_waarden.json").write(full_data)
+
+"""def Save(Loc,Data):
+    with open(Loc,"w") as File:
+        json.dump(Data,File)
+        if os.stat(Loc).st_size == 0:
+            File.write()
+            File.close()
+        else:
+            File.seek(0)
+            File.truncate()
+            File.write(Data)
+            File.close()
+Save("classes/calibratie_waarden.txt",str(full_data))"""
 GPIO.cleanup()
