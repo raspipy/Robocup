@@ -21,6 +21,6 @@ ultrasonesensor = ultrasonesensor(16)
 GPIO.setwarnings(False)
 
 
-print(lijnsensor.get_data())
+print(lijnsensor.get_data_raw())
 
 GPIO.cleanup()
