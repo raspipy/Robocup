@@ -20,14 +20,14 @@ data_white = [0,0,0,0,0,0,0,0]
 #############################
 
 #calibration for black color
-for i in range(5):
+for i in range(100):
     input("Zet op een ander plaats op het zwart")
     data_raw = lijnsensor.get_data_raw()
     for y in range(8):
         data[y] += data_raw[y]
     print(str(data_raw) + "\t" + str(data))
 for i in range(8):
-    data[i] = data[i] / 5
+    data[i] = data[i] / 100
 print(data)
 
 #calibration for white
