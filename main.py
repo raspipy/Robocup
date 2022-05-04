@@ -6,6 +6,7 @@ from classes.ultrasonesensor import ultrasonesensor
 from classes.lijnsensor import lijnsensor
 from classes.motor import motor
 from classes.kleurensensor import kleurensensor
+import classes.json_loader as json_loader
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
