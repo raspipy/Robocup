@@ -2,6 +2,9 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BOARD) # Sets the GPIO mode to BOARD
 class kleurensensor():
+    #############################
+    #     intalize              #
+    #############################
     def __init__(self, out_pins, in_pins):
         self.out_pins = out_pins
         self.in_pins = in_pins
@@ -18,6 +21,9 @@ class kleurensensor():
 
         GPIO.output(self.out_pins[3], GPIO.HIGH)
 
+    #######################
+    #     read color      #
+    #######################
     def get_data(self):
         # --- Sensor 1 --- #
         rising = GPIO.wait_for_edge(self.in_pins[0], GPIO.BOTH, timeout=100)
