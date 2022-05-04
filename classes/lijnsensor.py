@@ -19,6 +19,9 @@ class lijnsensor:
         time.sleep(0.00001)
         for each in self.pins:
             PI.setup(each,PI.IN)
+
+
+
         sum = 8
         resultaten = [0,0,0,0,0,0,0,0]
         beginTime = time.time_ns()
@@ -35,6 +38,7 @@ class lijnsensor:
         raw_data = self.get_data_raw()
         result = []
         print(self.calibration)
+
         for i in range(0,8):
             if abs(raw_data[i] - self.calibration[0][i]) < abs(raw_data[i] - self.calibration[1][i]):
                 result.append(1)
