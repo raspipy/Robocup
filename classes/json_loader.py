@@ -44,7 +44,7 @@ class json_loader:
                 f.truncate()
                 json.dump(json_data, f, indent=4)
             f.close()
-        return "Null"
+        return 0
 
 if __name__ == "__main__":
     json_loader("classes/calibratie_waarden.json").load()
