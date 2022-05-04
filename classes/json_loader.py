@@ -15,6 +15,7 @@ class json_loader:
         for i in data["black"]:
 
             result_black = data["black"][0]
+            print(result_black)
 
         for i in data["white"]:
 
@@ -57,3 +58,6 @@ class json_loader:
 
             f.close()
         return 0
+
+if __name__ == "__main__":
+    json_loader("classes/calibratie_waarden.json").load()
