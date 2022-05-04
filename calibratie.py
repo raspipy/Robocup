@@ -25,8 +25,10 @@ for i in range(5):
     data_raw = lijnsensor.get_data_raw()
     for y in range(8):
         data_white[y] += data_raw[y]
+    print(str(data_raw) + "\t" + str(data))
 for i in range(8):
     data_white[i] = data_white[i] / 5
+print(data_white)
 full_data = [data,data_white]
 
 json_loader("./classes/calibratie_waarden.json").write(full_data)
