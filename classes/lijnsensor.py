@@ -34,11 +34,11 @@ class lijnsensor:
     def get_data(self):
         raw_data = self.get_data_raw()
         result = []
-        print(self.calibration)
+        #print(self.calibration)
         for i in range(0,8):
             if abs(raw_data[i] - self.calibration[0][i]) < abs(raw_data[i] - self.calibration[1][i]):
                 result.append(1)
-                print(abs(raw_data[i] - self.calibration[0][i]))
+                #print(abs(raw_data[i] - self.calibration[0][i]))
             else:
                 result.append(0)
         return result
