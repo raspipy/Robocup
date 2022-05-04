@@ -21,6 +21,8 @@ motor1 = motor([35,37,32,8])
 ultrasonesensor = ultrasonesensor(16)
 GPIO.setwarnings(False)
 
-print(str(lijnsensor.get_data()) + "\t" + str(lijnsensor.get_data_raw()))
+while True:
+    print(str(lijnsensor.get_data()) + "\t" + str(lijnsensor.get_data_raw()))
+    time.sleep(0.1)
 
 GPIO.cleanup()
