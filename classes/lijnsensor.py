@@ -28,7 +28,7 @@ class lijnsensor:
                 sum += PI.input(each)
             for i in range(0,8):
                 if PI.input(self.pins[i]) == 0  and resultaten[i] == 0:
-                    resultaten[i] = int((time.time_ns() - beginTime) / 1000)
+                    resultaten[7 - i] = int((time.time_ns() - beginTime) / 1000)
         return resultaten
 
     def get_data(self):
@@ -37,6 +37,7 @@ class lijnsensor:
         for i in range(0,8):
             if abs(raw_data[i] - self.calibration[0][i]) < abs(raw_data[i] - self.calibration[1][i]):
                 result.append(1)
+                print(abs(raw_data[i] - self.calibration[0][i]))
             else:
                 result.append(0)
         return result

@@ -1,6 +1,5 @@
 import json
 import os
-from matplotlib.font_manager import json_dump
 
 class json_loader:
     def __init__(self, file):
