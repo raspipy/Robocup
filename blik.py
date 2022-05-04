@@ -11,3 +11,5 @@ while ultrasonesensor.get_data() <= 20.0:
     motor1.drive(-0)
     motor2.drive(20)
 print ("Found!")
+
+GPIO.cleanup()
