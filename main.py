@@ -20,7 +20,7 @@ motor1 = motor([35,37,32,8])
 ultrasonesensor = ultrasonesensor(16)
 GPIO.setwarnings(False)
 
-
+print(json_loader("classes/calibratie_waarden.json").load())
 print(str(lijnsensor.get_data()) + "\t" + str(lijnsensor.get_data_raw()))
 
 GPIO.cleanup()
