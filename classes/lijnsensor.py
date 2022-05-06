@@ -42,8 +42,12 @@ class lijnsensor:
             else:
                 result.append(0)
         return result
+
     def get_position(self):
         values = self.get_data()
         teller = 0*values[0] + 10*values[1] + 20*values[2] + 30*values[3] + 40*values[3] +50*values[4]+ 60*values[5] +70*values[6] +80*values[7]
         noemer = values[0] + values[1] + values[2] + values[3] + values[4] + values[5] + values[6] + values[7]
-        return teller/ noemer -35
+        if noemer != 0:
+            return teller/noemer - 35
+        else:
+            return None
