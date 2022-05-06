@@ -21,14 +21,14 @@ motor1 = motor([35,37,32,8], 10)
 ultrasonesensor = ultrasonesensor(16)
 GPIO.setwarnings(False)
 def drive():
-    while lijnsensor.get_data()[3] == 1:
-        print(str(lijnsensor.get_data()) + "\t" + str(lijnsensor.get_data_raw()))
+    while lijnsensor.get_position() == 0:
+        print(str(lijnsensor.get_position()) + "\t" + str(lijnsensor.get_data_raw()))
         motor1.drive(10)
         #motor2.drive(10)
-    if lijnsensor.get_data()[2] == 1:
+    if lijnsensor.get_position() == -5:
         motor1.drive(-10)
         drive()
-    elif lijnsensor.get_data()[4] == 1:
+    elif lijnsensor.get_position() == 5:
         motor1.drive(10)
         drive()
 GPIO.cleanup()
