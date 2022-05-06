@@ -31,11 +31,11 @@ while True:
         speedMotor1 = basespeed
         speedMotor2 = basespeed
     elif position > 0:
-        speedMotor1 = position + basespeed
-        speedMotor2 = position
+        speedMotor1 = basespeed + position
+        speedMotor2 = basespeed
     else:
-        speedMotor1 = abs(position)
-        speedMotor2 = abs(position) + basespeed
+        speedMotor1 = basespeed
+        speedMotor2 = basespeed + position
 
     motor1.drive(speedMotor1)
     motor2.drive(speedMotor2)
