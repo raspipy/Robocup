@@ -9,6 +9,7 @@ class lijnsensor:
         self.pins = pins
         PI.setup(7, PI.OUT)
         PI.output(7, PI.HIGH)
+        self.old_position = 0 
 
         self.calibration = json_loader("classes/calibratie_waarden.json").load()
         
@@ -48,6 +49,7 @@ class lijnsensor:
         teller = 0*values[0] + 10*values[1] + 20*values[2] + 30*values[3] + 40*values[3] +50*values[4]+ 60*values[5] +70*values[6] +80*values[7]
         noemer = values[0] + values[1] + values[2] + values[3] + values[4] + values[5] + values[6] + values[7]
         if noemer != 0:
+            self.old_position = teller/noemer - 35
             return teller/noemer - 35
         else:
-            return None
+            return self.old_position
