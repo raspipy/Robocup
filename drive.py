@@ -34,8 +34,8 @@ while True:
         speedMotor1 = position + basespeed
         speedMotor2 = position
     else:
-        speedMotor1 = position
-        speedMotor2 = position + basespeed
+        speedMotor1 = abs(position)
+        speedMotor2 = abs(position) + basespeed
 
     motor1.drive(speedMotor1)
     motor2.drive(speedMotor2)
