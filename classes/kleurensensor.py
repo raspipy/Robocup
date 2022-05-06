@@ -46,7 +46,18 @@ class kleurensensor():
             print("Timeout occured")
             return self.get_data_full()
         tijdsduur2 = time.time_ns() - begin_tijd
-
-
         return (tijdsduur1, tijdsduur2) # Return the result in a tuple
 
+    def setfilter(self, color):
+        if (color == "Red"):
+            GPIO.output(self.out_pins[2], GPIO.LOW)
+            GPIO.output(self.out_pins[3], GPIO.LOW)
+        if (color == "Blue"):
+            GPIO.output(self.out_pins[2], GPIO.LOW)
+            GPIO.output(self.out_pins[3], GPIO.HIGH)
+        if (color == "Clear"):
+            GPIO.output(self.out_pins[2], GPIO.HIGH)
+            GPIO.output(self.out_pins[3], GPIO.LOW)
+        if (color == "Green"):
+            GPIO.output(self.out_pins[2], GPIO.HIGH)
+            GPIO.output(self.out_pins[3], GPIO.HIGH)
