@@ -19,7 +19,7 @@ kleurensensoren = kleurensensor([40, 38, 36, 26], [22, 18])
 motor2 = motor([35,37,32,8], 10)
 motor1 = motor([10,12,33,8], 10)
 ultrasonesensor = ultrasonesensor(16)
-basespeed = input("BaseSpeed: ")
+basespeed = int(input("BaseSpeed: "))
 speedMotor1 = 0
 speedMotor2 = 0
 #############################
