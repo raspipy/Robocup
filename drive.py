@@ -26,8 +26,8 @@ speedMotor2 = 0
 #     main                  #
 #############################
 sensitivity = float(input("enter sensitivity: "))
-speedMotor1 = 20
-speedMotor2 = 20
+speedMotor1 = int(input("1"))
+speedMotor2 = int(input("2"))
 while True:
     position = lijnsensor.get_position()
    # speedMotor1 = basespeed + position * sensitivity
