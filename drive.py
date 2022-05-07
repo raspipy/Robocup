@@ -19,7 +19,7 @@ kleurensensoren = kleurensensor([40, 38, 36, 26], [22, 18])
 motor2 = motor([35,37,32,8], 10)
 motor1 = motor([10,12,33,8], 10)
 ultrasonesensor = ultrasonesensor(16)
-basespeed = int(input("BaseSpeed 1: "))
+basespeed = int(input("BaseSpeed: "))
 
 speedMotor1 = 0
 speedMotor2 = 0
@@ -34,3 +34,4 @@ while True:
     speedMotor1 = (basespeed + position * sensitivity) * 0.9
     motor1.drive(speedMotor1)
     motor2.drive(speedMotor2)
+    print(str(speedMotor1) + "\t" + str(position)+"\t"+ str(speedMotor2))
