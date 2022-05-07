@@ -25,7 +25,7 @@ speedMotor2 = 0
 #############################
 #     main                  #
 #############################
-sensitivity = 0.25
+sensitivity = 0.25 # 0.75 for non sharp edges
 
 while True:
     position = lijnsensor.get_position()
