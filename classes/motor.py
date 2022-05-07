@@ -32,6 +32,8 @@ class motor:
             speed *= -1
         if speed > 0 and speed < self.minimum_speed:
             speed = self.minimum_speed
+        if speed > 100:
+            speed =100
 
         self.pwm.ChangeDutyCycle(speed)
         
