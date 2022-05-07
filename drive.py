@@ -33,5 +33,5 @@ while True:
     position = lijnsensor.get_position()
    # speedMotor1 = basespeed + position * sensitivity
    # speedMotor2 = basespeed - position * sensitivity
-    motor1.drive(speedMotor1 + basespeed_1)
-    motor2.drive(speedMotor2+ basespeed_2)
+    motor1.drive(0 + basespeed_1)
+    motor2.drive(0+ basespeed_2)
