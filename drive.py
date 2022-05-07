@@ -34,4 +34,4 @@ while True:
     speedMotor1 = (basespeed + position * sensitivity) * 0.9
     motor1.drive(speedMotor1)
     motor2.drive(speedMotor2)
-    print(str(speedMotor1) + "\t" + str(position)+"\t"+ str(speedMotor2))
+    print(str(speedMotor1) + "\t" + str(position)+ "\t" + str(speedMotor2) + "\t" + str(lijnsensor.get_data()))
