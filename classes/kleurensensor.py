@@ -48,7 +48,7 @@ class kleurensensor():
         tijdsduur2 = time.time_ns() - begin_tijd
         return (tijdsduur1, tijdsduur2) # Return the result in a tuple
 
-    def setfilter(self, color):
+    def set_filter(self, color):
         if (color == "Red"):
             GPIO.output(self.out_pins[2], GPIO.LOW)
             GPIO.output(self.out_pins[3], GPIO.LOW)
