@@ -19,15 +19,16 @@ kleurensensoren = kleurensensor([40, 38, 36, 26], [22, 18])
 motor2 = motor([35,37,32,8], 10)
 motor1 = motor([10,12,33,8], 10)
 ultrasonesensor = ultrasonesensor(16)
-basespeed = int(input("BaseSpeed: "))
+basespeed_1 = int(input("BaseSpeed: "))
+basespeed_2 = basespeed_1 - 4
+
 speedMotor1 = 0
 speedMotor2 = 0
 #############################
 #     main                  #
 #############################
 sensitivity = float(input("enter sensitivity: "))
-speedMotor1 = int(input("1"))
-speedMotor2 = int(input("2"))
+
 while True:
     position = lijnsensor.get_position()
    # speedMotor1 = basespeed + position * sensitivity
