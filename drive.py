@@ -25,7 +25,7 @@ speedMotor2 = 0
 #############################
 #     main                  #
 #############################
-sensitivity = 1.1 
+sensitivity = 0.85
 
 while True:
     position = lijnsensor.get_position()
