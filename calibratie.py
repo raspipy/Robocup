@@ -47,7 +47,6 @@ full_data = [data,data_white]
 #     saving                #
 #############################
 
-json_loader("./classes/calibratie_waarden.json").write(full_data)
 
 """def Save(Loc,Data):
     with open(Loc,"w") as File:
