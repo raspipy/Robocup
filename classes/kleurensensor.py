@@ -46,7 +46,7 @@ class kleurensensor():
             print("Timeout occured")
             return self.get_data_full()
         tijdsduur2 = time.time_ns() - begin_tijd
-        return (tijdsduur1, tijdsduur2) # Return the result in a tuple
+        return (int(tijdsduur1), int(tijdsduur2)) # Return the result in a tuple
 
     def set_filter(self, color):
         if (color == "Red"):
