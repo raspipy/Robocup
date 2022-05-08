@@ -35,7 +35,7 @@ class kleurensensor():
         if falling is None:
             print("Timeout occured")
             return self.get_data_full()
-        tijdsduur1 = time.time_ns() - begin_tijd
+        tijdsduur1 = int(time.time_ns() - begin_tijd)
         rising2 = GPIO.wait_for_edge(self.in_pins[1], GPIO.BOTH, timeout=100)
         if rising2 is None:
             print("Timeout occured")
@@ -45,8 +45,8 @@ class kleurensensor():
         if rising3 is None:
             print("Timeout occured")
             return self.get_data_full()
-        tijdsduur2 = time.time_ns() - begin_tijd
-        return (int(tijdsduur1), int(tijdsduur2)) # Return the result in a tuple
+        tijdsduur2 = int(time.time_ns() - begin_tijd)
+        return (tijdsduur1, tijdsduur2) # Return the result in a tuple
 
     def set_filter(self, color):
         if (color == "Red"):
