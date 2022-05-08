@@ -16,7 +16,7 @@ possible_results = ["Red","Green","Blue","Clear"]
 texts = ["plaats de kleurensensors op het zwart","plaats de kleurensensors op het groen","plaats de kleurensensors op het geel"]
 for i in range(0,3):
     for j in range(5):
-        print(texts[i])
+        input(texts[i])
         for y in range(5):
             kleurensensor.set_filter("Green")
             data = kleurensensor.get_data()
