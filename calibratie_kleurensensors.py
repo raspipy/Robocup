@@ -4,14 +4,14 @@ import json
 from classes.json_loader import json_loader
 
 kleurensensor = kleurensensor([40, 38, 36, 26], [22, 18])
-groen_filter = [(0,0),(0,0),(0,0)]
-rood_filter = [(0,0),(0,0),(0,0)]
-clear_filter = [(0,0),(0,0),(0,0)]
-blue_filter = [(0,0),(0,0),(0,0)]
-verschil_groen_filter = [(0,0),(0,0)]
-verschil_rood_filter = [(0,0),(0,0)]
-verschil_clear_filter = [(0,0),(0,0)]
-verschil_blue_filter = [(0,0),(0,0)]
+groen_filter = [[0,0],[0,0],[0,0]]
+rood_filter = [[0,0],[0,0],[0,0]]
+clear_filter = [[0,0],[0,0],[0,0]]
+blue_filter = [[0,0],[0,0],[0,0]]
+verschil_groen_filter = [[0,0],[0,0]]
+verschil_rood_filter = [[0,0],[0,0]]
+verschil_clear_filter = [[0,0],[0,0]]
+verschil_blue_filter = [[0,0],[0,0]]
 possible_results = ["Red","Green","Blue","Clear"]
 texts = ["plaats de kleurensensors op het zwart","plaats de kleurensensors op het groen","plaats de kleurensensors op het geel"]
 for i in range(0,3):
