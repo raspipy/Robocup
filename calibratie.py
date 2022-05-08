@@ -41,12 +41,13 @@ for i in range(5):
 for i in range(8):
     data_white[i] = data_white[i] / 5
 print(data_white)
-full_data = [data,data_white]
 
 #############################
 #     saving                #
 #############################
 
+full_data = [data,data_white]
+json_loader("./classes/calibratie_waarden.json").write(full_data)
 
 """def Save(Loc,Data):
     with open(Loc,"w") as File:

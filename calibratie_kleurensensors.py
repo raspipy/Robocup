@@ -72,5 +72,4 @@ full_data = [
     ]
 
 print(gemiddeldes)
-
-json_loader("./classes/calibratie_waarden_kleurensensor.json").write(full_data)
+print(full_data)
