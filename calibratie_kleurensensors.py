@@ -65,10 +65,10 @@ minimale_verschillen = [
     min(verschil_blue_filter),
     min(verschil_clear_filter)
 ]
-
+print(minimale_verschillen)
 Max = max(minimale_verschillen)
 
-gemiddeldes = [groen_filter, rood_filter, blue_filter, clear_filter]
+gemiddeldes = [rood_filter, groen_filter, blue_filter, clear_filter]
 
 full_data = [
     possible_results[minimale_verschillen.index(Max)],
@@ -78,27 +78,63 @@ full_data = [
 print(gemiddeldes)
 print(full_data)
 
-print("\t\t\t")
-print("\tZWART\t")
-print("\tGROEN\t")
-print("\tGEEL\t")
+print("\n\t\t\tZWART\t\t\tGROEN\t\t\tGEEL")
+print("Rode filter\t\t" + str(rood_filter[0]) + "\t\t" + str(rood_filter[1]) + "\t\t" + str(rood_filter[2]))
+print("Groene filter\t\t" + str(groen_filter[0]) + "\t\t" + str(groen_filter[1]) + "\t\t" + str(groen_filter[2]))
+print("Blauwe filter\t\t" + str(blue_filter[0]) + "\t\t" + str(blue_filter[1]) + "\t\t" + str(blue_filter[2]))
+print("Clear filter\t\t" + str(clear_filter[0]) + "\t\t" + str(clear_filter[1]) + "\t\t" + str(clear_filter[2]) + "\n")
 
-print("rood_filter:\t")
-print(rood_filter[0])
-print(rood_filter[1])
-print(rood_filter[2])
+print("\n\t\t\tZWART-GROEN\t\tGROEN-GEEL\t\tZWART-GEEL")
+print("Rode filter\t\t" + str([abs(rood_filter[1][0] - rood_filter[0][0]), abs(rood_filter[1][1] - rood_filter[0][1])])
+    + "\t\t" + str([abs(rood_filter[2][0] - rood_filter[1][0]), abs(rood_filter[2][1] - rood_filter[1][1])])
+    + "\t\t" + str([abs(rood_filter[2][0] - rood_filter[0][0]), abs(rood_filter[2][1] - rood_filter[0][1])]))
+print("Groen filter\t\t" + str([abs(groen_filter[1][0] - groen_filter[0][0]), abs(groen_filter[1][1] - groen_filter[0][1])])
+    + "\t\t" + str([abs(groen_filter[2][0] - groen_filter[1][0]), abs(groen_filter[2][1] - groen_filter[1][1])])
+    + "\t\t" + str([abs(groen_filter[2][0] - groen_filter[0][0]), abs(groen_filter[2][1] - groen_filter[0][1])]))
+print("Blauwe filter\t\t" + str([abs(blue_filter[1][0] - blue_filter[0][0]), abs(blue_filter[1][1] - blue_filter[0][1])])
+    + "\t\t" + str([abs(blue_filter[2][0] - blue_filter[1][0]), abs(blue_filter[2][1] - blue_filter[1][1])])
+    + "\t\t\t" + str([abs(blue_filter[2][0] - blue_filter[0][0]), abs(blue_filter[2][1] - blue_filter[0][1])]))
+print("Clear filter\t\t" + str([abs(clear_filter[1][0] - clear_filter[0][0]), abs(clear_filter[1][1] - clear_filter[0][1])])
+    + "\t\t" + str([abs(clear_filter[2][0] - clear_filter[1][0]), abs(clear_filter[2][1] - clear_filter[1][1])])
+    + "\t\t\t" + str([abs(clear_filter[2][0] - clear_filter[0][0]), abs(clear_filter[2][1] - clear_filter[0][1])]))
 
-print("groen_filter:\t")
-print(groen_filter[0])
-print(groen_filter[1])
-print(groen_filter[2])
+print("\n\t\t\tmin(ZWART-GROEN)\tmin(GROEN-GEEL)\t\tmin(ZWART-GEEL)")
+print("Rode filter\t\t" + str(min([abs(rood_filter[1][0] - rood_filter[0][0]), abs(rood_filter[1][1] - rood_filter[0][1])]))
+    + "\t\t\t" + str(min([abs(rood_filter[2][0] - rood_filter[1][0]), abs(rood_filter[2][1] - rood_filter[1][1])]))
+    + "\t\t\t" + str(min([abs(rood_filter[2][0] - rood_filter[0][0]), abs(rood_filter[2][1] - rood_filter[0][1])])))
+print("Groen filter\t\t" + str(min([abs(groen_filter[1][0] - groen_filter[0][0]), abs(groen_filter[1][1] - groen_filter[0][1])]))
+    + "\t\t\t" + str(min([abs(groen_filter[2][0] - groen_filter[1][0]), abs(groen_filter[2][1] - groen_filter[1][1])]))
+    + "\t\t\t" + str(min([abs(groen_filter[2][0] - groen_filter[0][0]), abs(groen_filter[2][1] - groen_filter[0][1])])))
+print("Blauwe filter\t\t" + str(min([abs(blue_filter[1][0] - blue_filter[0][0]), abs(blue_filter[1][1] - blue_filter[0][1])]))
+    + "\t\t\t" + str(min([abs(blue_filter[2][0] - blue_filter[1][0]), abs(blue_filter[2][1] - blue_filter[1][1])]))
+    + "\t\t\t" + str(min([abs(blue_filter[2][0] - blue_filter[0][0]), abs(blue_filter[2][1] - blue_filter[0][1])])))
+print("Clear filter\t\t" + str(min([abs(clear_filter[1][0] - clear_filter[0][0]), abs(clear_filter[1][1] - clear_filter[0][1])]))
+    + "\t\t\t" + str(min([abs(clear_filter[2][0] - clear_filter[1][0]), abs(clear_filter[2][1] - clear_filter[1][1])]))
+    + "\t\t\t" + str(min([abs(clear_filter[2][0] - clear_filter[0][0]), abs(clear_filter[2][1] - clear_filter[0][1])])))
 
-print("blue_filter:\t")
-print(blue_filter[0])
-print(blue_filter[1])
-print(blue_filter[2])
+print("\n\t\t\tminimale verschillen")
+print("Rode filter\t\t" + str(min([min([abs(rood_filter[1][0] - rood_filter[0][0]), abs(rood_filter[1][1] - rood_filter[0][1])]),
+    min([abs(rood_filter[2][0] - rood_filter[1][0]), abs(rood_filter[2][1] - rood_filter[1][1])]),
+    min([abs(rood_filter[2][0] - rood_filter[0][0]), abs(rood_filter[2][1] - rood_filter[0][1])])])))
+print("Groene filter\t\t" + str(min([min([abs(groen_filter[1][0] - groen_filter[0][0]), abs(groen_filter[1][1] - groen_filter[0][1])]),
+    min([abs(groen_filter[2][0] - groen_filter[1][0]), abs(groen_filter[2][1] - groen_filter[1][1])]),
+    min([abs(groen_filter[2][0] - groen_filter[0][0]), abs(groen_filter[2][1] - groen_filter[0][1])])])))
+print("Blauwe filter\t\t" + str(min([min([abs(blue_filter[1][0] - blue_filter[0][0]), abs(blue_filter[1][1] - blue_filter[0][1])]),
+    min([abs(blue_filter[2][0] - blue_filter[1][0]), abs(blue_filter[2][1] - blue_filter[1][1])]),
+    min([abs(blue_filter[2][0] - blue_filter[0][0]), abs(blue_filter[2][1] - blue_filter[0][1])])])))
+print("Clear filter\t\t" + str(min([min([abs(clear_filter[1][0] - clear_filter[0][0]), abs(clear_filter[1][1] - clear_filter[0][1])]),
+    min([abs(clear_filter[2][0] - clear_filter[1][0]), abs(clear_filter[2][1] - clear_filter[1][1])]),
+    min([abs(clear_filter[2][0] - clear_filter[0][0]), abs(clear_filter[2][1] - clear_filter[0][1])])])))
 
-print("clear_filter:\t")
-print(clear_filter[0])
-print(clear_filter[1])
-print(clear_filter[2])
+print("\nmax(minimale verschillen):\t" + str(max([min([min([abs(rood_filter[1][0] - rood_filter[0][0]), abs(rood_filter[1][1] - rood_filter[0][1])]),
+    min([abs(rood_filter[2][0] - rood_filter[1][0]), abs(rood_filter[2][1] - rood_filter[1][1])]),
+    min([abs(rood_filter[2][0] - rood_filter[0][0]), abs(rood_filter[2][1] - rood_filter[0][1])])]),
+    min([min([abs(groen_filter[1][0] - groen_filter[0][0]), abs(groen_filter[1][1] - groen_filter[0][1])]),
+    min([abs(groen_filter[2][0] - groen_filter[1][0]), abs(groen_filter[2][1] - groen_filter[1][1])]),
+    min([abs(groen_filter[2][0] - groen_filter[0][0]), abs(groen_filter[2][1] - groen_filter[0][1])])]),
+    min([min([abs(blue_filter[1][0] - blue_filter[0][0]), abs(blue_filter[1][1] - blue_filter[0][1])]),
+    min([abs(blue_filter[2][0] - blue_filter[1][0]), abs(blue_filter[2][1] - blue_filter[1][1])]),
+    min([abs(blue_filter[2][0] - blue_filter[0][0]), abs(blue_filter[2][1] - blue_filter[0][1])])]),
+    min([min([abs(clear_filter[1][0] - clear_filter[0][0]), abs(clear_filter[1][1] - clear_filter[0][1])]),
+    min([abs(clear_filter[2][0] - clear_filter[1][0]), abs(clear_filter[2][1] - clear_filter[1][1])]),
+    min([abs(clear_filter[2][0] - clear_filter[0][0]), abs(clear_filter[2][1] - clear_filter[0][1])])])])))
