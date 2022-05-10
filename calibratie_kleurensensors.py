@@ -34,14 +34,14 @@ for i in range(0,3):
             data = kleurensensor.get_data()
             clear_filter[i][0] += data[0]
             clear_filter[i][1] += data[1]
-        groen_filter[i][0] /= 25
-        groen_filter[i][1] /= 25
-        rood_filter[i][0] /= 25
-        rood_filter[i][1] /= 25
-        blue_filter[i][0] /= 25
-        blue_filter[i][1] /= 25
-        clear_filter[i][0] /= 25
-        clear_filter[i][1] /= 25
+        groen_filter[i][0] //= 25
+        groen_filter[i][1] //= 25
+        rood_filter[i][0] //= 25
+        rood_filter[i][1] //= 25
+        blue_filter[i][0] //= 25
+        blue_filter[i][1] //= 25
+        clear_filter[i][0] //= 25
+        clear_filter[i][1] //= 25
 
 verschil_groen_filter[0] = min(abs(groen_filter[1][0] - groen_filter[0][0]), abs(groen_filter[1][1] - groen_filter[0][1]))
 verschil_groen_filter[1] = min(abs(groen_filter[2][0] - groen_filter[1][0]), abs(groen_filter[2][1] - groen_filter[1][1]))
