@@ -33,11 +33,11 @@ while True:
     colors = kleurensensoren.get_data()
     if colors[0] == "Geel":
         while True:
+            colors = kleurensensoren.get_data()
             if colors[0] == "Geel":
                 motor1.drive(0)
                 motor2.drive(basespeed)
             else:
-                colors = kleurensensoren.get_data()
                 motor1.drive(basespeed)
                 motor2.drive(0)
 
