@@ -37,6 +37,7 @@ while True:
                 motor1.drive(0)
                 motor2.drive(basespeed)
             else:
+                colors = kleurensensoren.get_data()
                 motor1.drive(basespeed)
                 motor2.drive(0)
 
