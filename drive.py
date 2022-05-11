@@ -32,7 +32,7 @@ while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
     if colors[0] =="Geel":
-        print(kleurensensoren.get_data_raw())
+        print(colors)
         print("Found Shortcut")
         break
     speedMotor1 = basespeed + position * sensitivity
