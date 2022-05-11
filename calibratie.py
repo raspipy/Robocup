@@ -50,7 +50,7 @@ print(data_white)
 #############################
 
 full_data = [data,data_white]
-json_loader("./classes/calibratie_waarden.json").write(full_data)
+json_loader("./classes/calibratie_waarden.json").write(full_data, False, 4)
 
 """def Save(Loc,Data):
     with open(Loc,"w") as File:
@@ -154,10 +154,6 @@ blue_filter[2][1] /= 25
 clear_filter[2][0] /= 25
 clear_filter[2][1] /= 25
 
-
-
-
-
-
+json_loader("classes/calibratie_waarden.json").write([groen_filter,rood_filter,blue_filter,clear_filter], True, 4)
 
 GPIO.cleanup()
