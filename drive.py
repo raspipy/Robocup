@@ -35,14 +35,22 @@ while True:
     if colors[0] == "Geel":
         print("geel")
         while enabled:
+            begin_tijd = time.time()
             colors = kleurensensoren.get_data()
             if colors[0] == "Groen":
                 motor1.drive(basespeed + 30)
                 motor2.drive(0)
-            elif colors[0] == "Zwart":
+            #elif colors[0] == "Zwart" and time.time() - begin_tijd >= 2:
+            #    motor1.drive(0)
+            #    motor2.drive(basespeed + 30)
+            #    time.sleep(0.5)
+            else:
+                motor1.drive(basespeed + 30)
+                motor2.drive(0)
+            if colors[0] == "Zwart":
                 motor1.drive(0)
-                motor2.drive(basespeed + 30)
-                time.sleep(0.5)
+                motor2.drive(0)
+                time.sleep(10)
             
                 
             
