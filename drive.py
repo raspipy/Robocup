@@ -31,16 +31,13 @@ sensitivity = float(input("enter sensitivity: "))
 while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
-    if colors[0] =="Geel":
+    if colors[0] == "Geel":
         while colors[1] != "Zwart":
             motor2.drive(basespeed + 20)
         while colors[1] != "Groen":
             motor2.drive(basespeed + 20)
-        motor1.drive(basespeed - 20)
-        motor2.drive(basespeed + 20)
-        time.sleep(0.25)
         break
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
-    motor2.drive(speedMotor2)
+    motor2.drive(speedMotor2)   
