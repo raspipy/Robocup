@@ -37,9 +37,9 @@ while True:
             colors = kleurensensoren.get_data()
             if colors[0] == "Groen":
                 motor1.drive(basespeed + 30)
-                motor2.drive(1)
+                motor2.drive(0)
             else:
-                motor1.drive(1)
+                motor1.drive(0)
                 motor2.drive(basespeed + 30)
 
 
