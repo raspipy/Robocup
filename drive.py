@@ -30,7 +30,7 @@ sensitivity = float(input("enter sensitivity: "))
 
 while True:
     position = lijnsensor.get_position()
-    colors = kleurensensor.get_data()
+    colors = kleurensensoren.get_data()
     if colors[0] =="Geel":
         print("Found Shortcut")
         break
