@@ -15,16 +15,10 @@ class json_loader:
         data = json.loads(f.read())
         if kleurensensor:
             results = []
-            b = -1
             ###### Takes the green_filter data out of the JSON file ######
-            for i in data["filters"]:
-                b += 1
-                result_green = data["filters"][b]
-                print(result_green)
-            for i in result_green: # Turns the raw data into a list
-                results.append(result_green[i])
-            b = -1
-            return results
+            result = data["filter"]
+        
+            return result
         else:
             result_black = None
             for i in data["black"]:
@@ -44,11 +38,7 @@ class json_loader:
         with open(self.file,"r+") as f:
             json_data = json.loads(f.read())
             if kleurensensor:
-                b = 0
-                for i in json_data["filters"][0]:
-                    json_data["filters"][0][i] = data[b]
-                    b += 1
-                b = 0
+                json_data["filter"] = data
 
             else:        
                 for i in range(1,9):
@@ -69,4 +59,4 @@ class json_loader:
 
 if __name__ == "__main__":
     print(json_loader("classes/calibratie_waarden.json").load(True))
-    json_loader("classes/calibratie_waarden.json").write([(10,10,10),(10,40, 10),(10,10, 10),(10,10, 10)],True, 2)
+    json_loader("classes/calibratie_waarden.json").write(['Red', [[189, 249], [79, 98], [29, 41]]],True, 2)
