@@ -32,11 +32,16 @@ while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
     if colors[0] == "Geel":
+        time.sleep(1)
         while colors[1] != "Zwart":
             motor2.drive(basespeed + 20)
+        time.sleep(1)
         while colors[1] != "Groen":
             motor2.drive(basespeed + 20)
-        time.sleep(0.25)
+        time.sleep(1)
+        motor1.drive(0)
+        motor2.drive(0)
+        break
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
