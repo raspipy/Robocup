@@ -3,6 +3,8 @@
 #############################
 import time
 from turtle import speed
+
+from numpy import False_
 from classes.ultrasonesensor import ultrasonesensor
 from classes.lijnsensor import lijnsensor
 from classes.motor import motor
@@ -28,7 +30,7 @@ speedMotor2 = 0
 #############################
 sensitivity = float(input("enter sensitivity: "))
 enabled = True
-
+first_black = False_
 while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
@@ -37,6 +39,11 @@ while True:
         while enabled:
             begin_tijd = time.time()
             colors = kleurensensoren.get_data()
+            if colors[0] == "Zwart" and first_black ==  False:
+                motor1.drive(-20)
+                motor2.drive(20)
+                first_black = True
+                time.sleep(10)
             if colors[0] == "Groen":
                 motor1.drive(basespeed + 30)
                 motor2.drive(0)
@@ -47,10 +54,7 @@ while True:
             else:
                 motor2.drive(basespeed + 30)
                 motor1.drive(0)
-            if colors[0] == "Zwart":
-                motor1.drive(0)
-                motor2.drive(0)
-                time.sleep(10)
+            
             
                 
             
