@@ -34,8 +34,8 @@ while True:
     if colors[0] =="Geel":
         print(colors)
         print("Found Shortcut")
-        motor1.drive(basespeed + 20)
-        motor2.drive(basespeed - 20)
+        motor1.drive(basespeed - 20)
+        motor2.drive(basespeed + 20)
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
