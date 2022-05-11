@@ -32,6 +32,7 @@ while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
     if colors[0] == "Geel":
+        print("GEEEEEEEEEEEEEEEL")
         while True:
             colors = kleurensensoren.get_data()
             if colors[0] == "Geel":
