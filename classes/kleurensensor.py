@@ -68,8 +68,8 @@ class kleurensensor():
             #print("filter op groen gezet")
     
     def get_data(self):
-        results = ["",""]
         data = self.get_data_raw()
+        results = ["","", data]
         for i in range(2):
             if (abs(self.calibration[1][0][i] - data[i]) <= min(abs(self.calibration[1][1][i] - data[i]), abs(self.calibration[1][2][i] - data[i]))):
                 results[1-i] = "Zwart"
