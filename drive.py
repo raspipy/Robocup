@@ -32,11 +32,14 @@ while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
     if colors[0] =="Geel":
-        print(colors)
-        print("Found Shortcut")
+        while colors[1] != "Zwart":
+            motor2.drive(basespeed + 20)
+        while colors[1] != "Groen":
+            motor2.drive(basespeed + 20)
         motor1.drive(basespeed - 20)
         motor2.drive(basespeed + 20)
         time.sleep(0.25)
+    elif colors[1] == ""
         
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
