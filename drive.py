@@ -36,6 +36,8 @@ while True:
         print("Found Shortcut")
         motor1.drive(basespeed - 20)
         motor2.drive(basespeed + 20)
+        time.sleep(0.25)
+        break
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
