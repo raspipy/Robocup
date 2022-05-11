@@ -72,9 +72,9 @@ class kleurensensor():
         data = self.get_data_raw()
         for i in range(2):
             if (abs(self.calibration[1][0][i] - data[i]) <= min(abs(self.calibration[1][1][i] - data[i]), abs(self.calibration[1][2][i] - data[i]))):
-                results[i] = "Zwart"
+                results[1-i] = "Zwart"
             elif (abs(self.calibration[1][1][i] - data[i]) <= min(abs(self.calibration[1][0][i] - data[i]), abs(self.calibration[1][2][i] - data[i]))):
-                results[i] = "Groen"
+                results[1 -i] = "Groen"
             else:
-                results[i] = "Geel"
+                results[1 -i] = "Geel"
         return results
