@@ -40,6 +40,7 @@ while True:
             colors = kleurensensoren.get_data()
             motor1.drive(-20)
             motor2.drive(20)
+        time.sleep(0.1)
         motor1.drive(0)
         motor2.drive(0)
         time.sleep(1)
