@@ -43,10 +43,10 @@ while True:
                 motor1.drive(-20)
                 motor2.drive(20)
                 first_black = True
-                time.sleep(0.5)
+                time.sleep(0.4)
                 motor1.drive(basespeed)
                 motor2.drive(basespeed)
-                time.sleep(0.5)
+                time.sleep(0.25)
                 motor1.drive(0)
                 motor2.drive(0)
                 time.sleep(100)
