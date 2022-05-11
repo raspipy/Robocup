@@ -57,11 +57,11 @@ while True:
         while colors[0] != "Zwart" and colors[1] != "Zwart":
             colors = kleurensensoren.get_data()
             if colors[0] == "Geel":
-                motor1.drive(basespeed)
+                motor1.drive(basespeed- 20)
                 motor2.drive(basespeed + 20)
             elif colors[1] == "Geel":
                 motor1.drive(basespeed + 20)
-                motor2.drive(basespeed)
+                motor2.drive(basespeed - 20)
             else:
                 motor1.drive(basespeed)
                 motor2.drive(basespeed)
