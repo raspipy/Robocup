@@ -39,8 +39,7 @@ while True:
         motor1.drive(basespeed - 20)
         motor2.drive(basespeed + 20)
         time.sleep(0.25)
-    elif colors[1] == ""
-        
+        break
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
