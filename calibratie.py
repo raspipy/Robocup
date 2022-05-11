@@ -14,13 +14,23 @@ lijnsensor = lijnsensor([11, 13, 15, 19, 21, 23, 29, 31])
 data_raw = []
 data = [0,0,0,0,0,0,0,0]
 data_white = [0,0,0,0,0,0,0,0]
+groen_filter = [[0,0],[0,0],[0,0]]
+rood_filter = [[0,0],[0,0],[0,0]]
+clear_filter = [[0,0],[0,0],[0,0]]
+blue_filter = [[0,0],[0,0],[0,0]]
+verschil_groen_filter = [[0,0],[0,0],[0,0]]
+verschil_rood_filter = [[0,0],[0,0],[0,0]]
+verschil_clear_filter = [[0,0],[0,0],[0,0]]
+verschil_blue_filter = [[0,0],[0,0],[0,0]]
+possible_results = ["Red","Green","Blue","Clear"]
+texts = ["plaats de kleurensensors op het zwart","plaats de kleurensensors op het groen","plaats de kleurensensors op het geel"]
 #############################
 #     calibration           #
 #############################
 
 #calibration for black color
 for i in range(5):
-    input("Zet op een ander plaats op het zwart")
+    input("Zet de lijnsensor op een ander plaats op het zwart")
     data_raw = lijnsensor.get_data_raw()
     for b in range(100):
         for y in range(8):
@@ -32,7 +42,7 @@ print(data)
 
 #calibration for white
 for i in range(5):
-    input("Zet op een ander plaats op het wit!")
+    input("Zet de lijnsensor op een ander plaats op het groen!")
     data_raw = lijnsensor.get_data_raw()
     for y in range(8):
         data_white[y] += data_raw[y]
@@ -48,17 +58,7 @@ print(data_white)
 full_data = [data,data_white]
 json_loader("./classes/calibratie_waarden.json").write(full_data, False, 4)
 #-------------------------------------------------------------------------------------------------------------
-kleurensensor = kleurensensor([40, 38, 36, 26], [22, 18])
-groen_filter = [[0,0],[0,0],[0,0]]
-rood_filter = [[0,0],[0,0],[0,0]]
-clear_filter = [[0,0],[0,0],[0,0]]
-blue_filter = [[0,0],[0,0],[0,0]]
-verschil_groen_filter = [[0,0],[0,0],[0,0]]
-verschil_rood_filter = [[0,0],[0,0],[0,0]]
-verschil_clear_filter = [[0,0],[0,0],[0,0]]
-verschil_blue_filter = [[0,0],[0,0],[0,0]]
-possible_results = ["Red","Green","Blue","Clear"]
-texts = ["plaats de kleurensensors op het zwart","plaats de kleurensensors op het groen","plaats de kleurensensors op het geel"]
+
 for i in range(0,3):
     for j in range(5):
         input(texts[i])
