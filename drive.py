@@ -43,7 +43,6 @@ while True:
                 motor1.drive(0)
                 motor2.drive(basespeed + 30)
                 time.sleep(0.5)
-µ        
             
                 
             
