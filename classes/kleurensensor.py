@@ -57,7 +57,7 @@ class kleurensensor():
             GPIO.output(self.out_pins[2], GPIO.LOW)
             GPIO.output(self.out_pins[3], GPIO.HIGH)
         if (color == "Clear"):
-            GPIO.output(self.out_pins[2], GPIO.HIGH)s
+            GPIO.output(self.out_pins[2], GPIO.HIGH)
             GPIO.output(self.out_pins[3], GPIO.LOW)
         if (color == "Green"):
             GPIO.output(self.out_pins[2], GPIO.HIGH)
