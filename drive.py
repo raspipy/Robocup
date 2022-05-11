@@ -40,8 +40,8 @@ while True:
                 motor2.drive(0)
             elif colors[0] == "Zwart":
                 motor1.drive(0)
-                motor2.drive(0)
-                time.sleep(5)
+                motor2.drive(basespeed)
+                time.sleep(0.25)
                 
             else:
 
