@@ -52,6 +52,7 @@ for i in range(5):
         data = kleurensensor.get_data()
         clear_filter[1][0] += data[0]
         clear_filter[1][1] += data[1]
+
 groen_filter[1][0] /= 25
 groen_filter[1][1] /= 25
 rood_filter[1][0] /= 25
@@ -87,9 +88,4 @@ blue_filter[2][0] /= 25
 blue_filter[2][1] /= 25
 clear_filter[2][0] /= 25
 clear_filter[2][1] /= 25
-
-
-    
-    
-
 
