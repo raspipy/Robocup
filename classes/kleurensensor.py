@@ -53,15 +53,20 @@ class kleurensensor():
         if (color == "Red"):
             GPIO.output(self.out_pins[2], GPIO.LOW)
             GPIO.output(self.out_pins[3], GPIO.LOW)
+            print("filter op rood gezet")
         if (color == "Blue"):
             GPIO.output(self.out_pins[2], GPIO.LOW)
             GPIO.output(self.out_pins[3], GPIO.HIGH)
+            print("filter op blauw gezet")
         if (color == "Clear"):
             GPIO.output(self.out_pins[2], GPIO.HIGH)
             GPIO.output(self.out_pins[3], GPIO.LOW)
+            print("filter op clear gezet")
         if (color == "Green"):
             GPIO.output(self.out_pins[2], GPIO.HIGH)
             GPIO.output(self.out_pins[3], GPIO.HIGH)
+            print("filter op groen gezet")
+    
     def get_data(self):
         results = ["",""]
         data = self.get_data_raw()
