@@ -38,15 +38,17 @@ while True:
         print("Zoeken naar zwart")
         while colors[1] != "Zwart":
             colors = kleurensensoren.get_data()
-            motor1.drive(-10)
-            motor2.drive(10)
+            motor1.drive(-20)
+            motor2.drive(20)
         motor1.drive(0)
         motor2.drive(0)
         time.sleep(1)
         print("Zoeken naar groen")
         while colors[1] != "Groen":
-            motor1.drive(-10)
-            motor2.drive(10)
+            colors = kleurensensoren.get_data()
+
+            motor1.drive(-20)
+            motor2.drive(20)
         motor1.drive(0)
         motor2.drive(0)
         time.sleep(1)
