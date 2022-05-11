@@ -64,19 +64,19 @@ for i in range(0,3):
         input(texts[i])
         for y in range(5):
             kleurensensor.set_filter("Green")
-            data = kleurensensor.get_data()
+            data = kleurensensor.get_data_raw()
             groen_filter[i][0] += data[0]
             groen_filter[i][1] += data[1]
             kleurensensor.set_filter("Red")
-            data = kleurensensor.get_data()
+            data = kleurensensor.get_data_raw()
             rood_filter[i][0] += data[0]
             rood_filter[i][1] += data[1]
             kleurensensor.set_filter("Blue")
-            data = kleurensensor.get_data()
+            data = kleurensensor.get_data_raw()
             blue_filter[i][0] += data[0]
             blue_filter[i][1] += data[1]
             kleurensensor.set_filter("Clear")
-            data = kleurensensor.get_data()
+            data = kleurensensor.get_data_raw()
             clear_filter[i][0] += data[0]
             clear_filter[i][1] += data[1]
         groen_filter[i][0] //= 25

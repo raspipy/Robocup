@@ -14,20 +14,18 @@ class kleurensensor():
             GPIO.setup(i, GPIO.OUT)
         for i in self.in_pins:
             GPIO.setup(i, GPIO.IN)
-        self.calibration = json_loader("classes/calibratie_waarden.json").load()
+        self.calibration = json_loader("classes/calibratie_waarden.json").load(True)
 
         GPIO.output(self.out_pins[0], GPIO.LOW)
 
         GPIO.output(self.out_pins[1], GPIO.HIGH)
 
-        GPIO.output(self.out_pins[2], GPIO.HIGH)
-
-        GPIO.output(self.out_pins[3], GPIO.HIGH)
+        self.set_filter(self.calibration[0])
 
     #######################
     #     read color      #
     #######################
-    def get_data(self):
+    def get_data_raw(self):
         # --- Sensor 1 --- #
         rising = GPIO.wait_for_edge(self.in_pins[0], GPIO.BOTH, timeout=100)
         if rising is None:
@@ -64,3 +62,6 @@ class kleurensensor():
         if (color == "Green"):
             GPIO.output(self.out_pins[2], GPIO.HIGH)
             GPIO.output(self.out_pins[3], GPIO.HIGH)
+    def get_data(self):
+
+        
