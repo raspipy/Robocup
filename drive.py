@@ -43,7 +43,7 @@ while True:
                 motor1.drive(-20)
                 motor2.drive(20)
                 first_black = True
-                time.sleep(10)
+                time.sleep(0.5)
             if colors[0] == "Groen":
                 motor1.drive(basespeed + 30)
                 motor2.drive(0)
