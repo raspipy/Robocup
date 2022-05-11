@@ -27,13 +27,14 @@ speedMotor2 = 0
 #     main                  #
 #############################
 sensitivity = float(input("enter sensitivity: "))
+enabled = True
 
 while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
     if colors[0] == "Geel":
         print("geel")
-        while True:
+        while enabled:
             colors = kleurensensoren.get_data()
             if colors[0] == "Groen":
                 motor1.drive(basespeed + 30)
@@ -41,58 +42,12 @@ while True:
             elif colors[0] == "Zwart":
                 motor1.drive(0)
                 motor2.drive(basespeed)
-                time.sleep(0.25)
+                time.sleep(0.5)
+                enabled = False
+            
                 
-            else:
+            
 
-                motor1.drive(0)
-                motor2.drive(basespeed + 30)
-
-
-
-
-
-
-
-
-
-
-
-
-        """motor1.drive(0)
-        motor2.drive(0)
-        time.sleep(1)
-        print("Zoeken naar zwart")
-        while colors[1] != "Zwart":
-            colors = kleurensensoren.get_data()
-            motor1.drive(-20)
-            motor2.drive(20)
-        time.sleep(0.1)
-        motor1.drive(0)
-        motor2.drive(0)
-        time.sleep(1)
-        print("Zoeken naar groen")
-        while colors[1] != "Groen":
-            colors = kleurensensoren.get_data()
-            motor1.drive(-20)
-            motor2.drive(20)
-            time.sleep(0.1)
-        motor1.drive(0)
-        motor2.drive(0)
-        time.sleep(1)
-        print("Gele lijn volgen")
-        while colors[0] != "Zwart" and colors[1] != "Zwart":
-            colors = kleurensensoren.get_data()
-            if colors[0] == "Geel":
-                motor1.drive(basespeed- 20)
-                motor2.drive(basespeed + 20)
-            elif colors[1] == "Geel":
-                motor1.drive(basespeed + 20)
-                motor2.drive(basespeed - 20)
-            else:
-                motor1.drive(basespeed)
-                motor2.drive(basespeed)
-        break"""
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
