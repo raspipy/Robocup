@@ -57,11 +57,19 @@ class kleurensensor():
             GPIO.output(self.out_pins[2], GPIO.LOW)
             GPIO.output(self.out_pins[3], GPIO.HIGH)
         if (color == "Clear"):
-            GPIO.output(self.out_pins[2], GPIO.HIGH)
+            GPIO.output(self.out_pins[2], GPIO.HIGH)s
             GPIO.output(self.out_pins[3], GPIO.LOW)
         if (color == "Green"):
             GPIO.output(self.out_pins[2], GPIO.HIGH)
             GPIO.output(self.out_pins[3], GPIO.HIGH)
     def get_data(self):
-
-        
+        results = ["",""]
+        data = self.get_data_raw()
+        for i in range(2):
+            if (abs(self.calibration[1][0][i] - data[i]) <= min(abs(self.calibration[1][1][i] - data[i]), abs(self.calibration[1][2][i] - data[i]))):
+                results[i] = "Zwart"
+            elif (abs(self.calibration[1][1][i] - data[i]) <= min(abs(self.calibration[1][0][i] - data[i]), abs(self.calibration[1][2][i] - data[i]))):
+                results[i] = "Groen"
+            else:
+                results[i] = "Geel"
+        return results
