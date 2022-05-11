@@ -38,7 +38,12 @@ while True:
             if colors[0] == "Groen":
                 motor1.drive(basespeed + 30)
                 motor2.drive(0)
+            elif colors[0] == "Zwart":
+                motor1.drive(0)
+                motor2.drive(0)
+                break
             else:
+
                 motor1.drive(0)
                 motor2.drive(basespeed + 30)
 
