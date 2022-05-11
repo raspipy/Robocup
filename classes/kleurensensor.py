@@ -15,7 +15,7 @@ class kleurensensor():
         for i in self.in_pins:
             GPIO.setup(i, GPIO.IN)
         self.calibration = json_loader("classes/calibratie_waarden.json").load(True)
-
+        print(self.calibration)
         GPIO.output(self.out_pins[0], GPIO.LOW)
 
         GPIO.output(self.out_pins[1], GPIO.HIGH)
