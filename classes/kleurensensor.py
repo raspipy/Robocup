@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+from classes.json_loader import json_loader
 GPIO.setmode(GPIO.BOARD) # Sets the GPIO mode to BOARD
 class kleurensensor():
     #############################
@@ -8,10 +9,12 @@ class kleurensensor():
     def __init__(self, out_pins, in_pins):
         self.out_pins = out_pins
         self.in_pins = in_pins
+        
         for i in self.out_pins:
             GPIO.setup(i, GPIO.OUT)
         for i in self.in_pins:
             GPIO.setup(i, GPIO.IN)
+        self.calibration = json_loader("classes/calibratie_waarden.json").load()
 
         GPIO.output(self.out_pins[0], GPIO.LOW)
 
