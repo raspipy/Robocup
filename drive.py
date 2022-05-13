@@ -38,6 +38,7 @@ first_black = False
 time.sleep(0.4)
 while main_loop:
     position = lijnsensor.get_position()
+    print(lijnsensor.get_data())
     color1 = kleurensensoren.get_data()
     color2 = kleurensensoren.get_data()
     #print(lijnsensor.get_data_raw(), lijnsensor.get_data(), int(position))
