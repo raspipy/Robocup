@@ -39,3 +39,6 @@ def find_blik(distance, speed, motor1, motor2):
             motor2.drive(20)
     motor1.drive(speed)
     motor2.drive(speed)
+    time.sleep(2)
+    motor1.drive(0)
+    motor2.drive(0)
