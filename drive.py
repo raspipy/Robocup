@@ -36,13 +36,14 @@ motor2.drive(basespeed)
 time.sleep(0.5)
 while True:
     position = lijnsensor.get_position()
-    colors = kleurensensoren.get_data()
-    if colors[0] == "Geel":
+    color1 = kleurensensoren.get_data()
+    color2 = kleurensensoren.get_data()
+    if color1[0] == "Geel" and color2[0] == "Geel":
         print("geel")
         while enabled:
             begin_tijd = time.time()
-            colors = kleurensensoren.get_data()
-            if colors[0] == "Zwart" and first_black ==  False:
+            color1 = kleurensensoren.get_data()
+            if color1[0] == "Zwart" and first_black ==  False:
                 motor1.drive(-20)
                 motor2.drive(20)
                 first_black = True
@@ -52,10 +53,10 @@ while True:
                 time.sleep(0.25)
                 enabled = False
                 break
-            if colors[0] == "Groen":
+            if color1[0] == "Groen":
                 motor1.drive(basespeed + 30)
                 motor2.drive(0)
-            #elif colors[0] == "Zwart" and time.time() - begin_tijd >= 2:
+            #elif color1[0] == "Zwart" and time.time() - begin_tijd >= 2:
             #    motor1.drive(0)
             #    motor2.drive(basespeed + 30)
             #    time.sleep(0.5)
