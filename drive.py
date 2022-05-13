@@ -42,7 +42,7 @@ while main_loop:
     color2 = kleurensensoren.get_data()
     #print(lijnsensor.get_data_raw(), lijnsensor.get_data(), int(position))
     #time.sleep(0.5)
-    """if color1[0] == "Geel" and color2[0] == "Geel":
+    if color1[0] == "Geel" and color2[0] == "Geel":
         if color1[0] == "Geel" and color2[0] == "Geel" and color1[1] == "Geel" and color2[1] == "Geel":
             find_blik(20, basespeed, motor1, motor2)
             #main_loop = False
@@ -73,7 +73,7 @@ while main_loop:
             else:
                 motor2.drive(basespeed + 30)
                 motor1.drive(0)
-    """
+    
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
