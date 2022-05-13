@@ -30,7 +30,7 @@ speedMotor2 = 0
 #############################
 sensitivity = float(input("enter sensitivity: "))
 enabled = True
-first_black = False_
+first_black = False
 while True:
     position = lijnsensor.get_position()
     colors = kleurensensoren.get_data()
@@ -59,11 +59,6 @@ while True:
             else:
                 motor2.drive(basespeed + 30)
                 motor1.drive(0)
-            
-            
-                
-            
-
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
