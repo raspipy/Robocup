@@ -69,8 +69,8 @@ while main_loop:
             #    motor2.drive(basespeed + 30)
             #    time.sleep(0.5)
             else:
-                motor2.drive(basespeed + 30)
-                motor1.drive(0)
+                motor2.drive(0)
+                motor1.drive(basespeed + 30)
     
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
