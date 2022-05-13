@@ -13,6 +13,7 @@ class lijnsensor:
 
         self.calibration = json_loader("classes/calibratie_waarden.json").load(False, False)
         print(self.calibration)
+        
     def get_data_raw(self):
         for each in self.pins:
             PI.setup(each,PI.OUT)
