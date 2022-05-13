@@ -121,7 +121,7 @@ full_data = [
 
 
 print(full_data)
-json_loader("classes/calibratie_waarden.json").write(full_data, True, 4)
+json_loader("classes/calibratie_waarden.json").write(full_data, True, False, 4)
 
 print("\n\t\t\tZWART\t\t\tGROEN\t\t\tGEEL")
 print("Rode filter\t\t" + str(rood_filter[0]) + "\t\t" + str(rood_filter[1]) + "\t\t" + str(rood_filter[2]))
