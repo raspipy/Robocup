@@ -43,8 +43,8 @@ while main_loop:
     if color1[0] == "Geel" and color2[0] == "Geel":
         if color1[0] == "Geel" and color2[0] == "Geel" and color1[1] == "Geel" and color2[1] == "Geel":
             find_blik(20, basespeed, motor1, motor2)
-            main_loop = False
-            break
+            #main_loop = False
+
             
         if first_black == False:
             print("geel")
@@ -69,8 +69,8 @@ while main_loop:
             #    motor2.drive(basespeed + 30)
             #    time.sleep(0.5)
             else:
-                motor2.drive(0)
-                motor1.drive(basespeed + 30)
+                motor2.drive(basespeed + 30)
+                motor1.drive(0)
     
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
