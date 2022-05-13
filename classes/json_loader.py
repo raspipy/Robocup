@@ -61,6 +61,6 @@ class json_loader:
         return 0
 
 
-if __name__ == "__main__":
-    print(json_loader("classes/calibratie_waarden.json").load(False, True))
-    json_loader("classes/calibratie_waarden.json").write(['Red', [[189, 249], [79, 98], [29, 41]]],True,False, 2)
+#if __name__ == "__main__":
+#    print(json_loader("classes/calibratie_waarden.json").load(False, True))
+#    json_loader("classes/calibratie_waarden.json").write(['Red', [[189, 249], [79, 98], [29, 41]]],True,False, 2)
