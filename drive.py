@@ -5,6 +5,7 @@ import time
 from turtle import speed
 
 from numpy import False_
+from blik import find_blik
 from classes.ultrasonesensor import ultrasonesensor
 from classes.lijnsensor import lijnsensor
 from classes.motor import motor
@@ -39,6 +40,8 @@ while True:
     color1 = kleurensensoren.get_data()
     color2 = kleurensensoren.get_data()
     if color1[0] == "Geel" and color2[0] == "Geel":
+        if color1[0] == "Geel" and color2[0] == "Geel" and color1[1] == "Geel" and color2[1] == "Geel":
+            find_blik(10, basespeed)
         if first_black == False:
             print("geel")
         while enabled:
@@ -64,6 +67,7 @@ while True:
             else:
                 motor2.drive(basespeed + 30)
                 motor1.drive(0)
+    
     speedMotor1 = basespeed + position * sensitivity
     speedMotor2 = basespeed - position * sensitivity
     motor1.drive(speedMotor1)
