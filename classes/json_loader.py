@@ -36,7 +36,7 @@ class json_loader:
             f.close()
             return results        
 
-    def write(self, data, kleurensensor,blik, indent):
+    def write(self, data, kleurensensor, blik, indent):
         #write data to .json file
         with open(self.file,"r+") as f:
             json_data = json.loads(f.read())
@@ -44,7 +44,6 @@ class json_loader:
                 json_data["filter"] = data
             elif blik:
                 json_data["blik"] = data
-
             else:        
                 for i in range(1,9):
                     json_data["black"][0]['%d'%(i)] = data[0][i - 1]
@@ -63,5 +62,5 @@ class json_loader:
 
 
 if __name__ == "__main__":
-    print(json_loader("classes/calibratie_waarden.json").load(True))
+    print(json_loader("classes/calibratie_waarden.json").load(False, True))
     json_loader("classes/calibratie_waarden.json").write(['Red', [[189, 249], [79, 98], [29, 41]]],True,False, 2)
