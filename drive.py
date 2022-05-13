@@ -1,6 +1,7 @@
 #############################
 #     importing libaries    #
 #############################
+from concurrent.futures.process import _MAX_WINDOWS_WORKERS
 import time
 from turtle import speed
 
@@ -31,17 +32,20 @@ speedMotor2 = 0
 #############################
 sensitivity = float(input("enter sensitivity: "))
 enabled = True
+main_loop = True
 first_black = False
 motor1.drive(basespeed)
 motor2.drive(basespeed)
 time.sleep(0.4)
-while True:
+while main_loop:
     position = lijnsensor.get_position()
     color1 = kleurensensoren.get_data()
     color2 = kleurensensoren.get_data()
     if color1[0] == "Geel" and color2[0] == "Geel":
         if color1[0] == "Geel" and color2[0] == "Geel" and color1[1] == "Geel" and color2[1] == "Geel":
             find_blik(10, basespeed, motor1, motor2)
+            main_loop = False
+            break
             
         if first_black == False:
             print("geel")
