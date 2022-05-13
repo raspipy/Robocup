@@ -30,9 +30,12 @@ def find_blik(distance, speed, motor1, motor2):
             e = ultrasonesensor.get_data()
             motor1.drive(20)
             motor2.drive(-20)
+
         while ultrasonesensor.get_data() <= e:
             f = ultrasonesensor.get_data()
             if f < e:
                 e = f
-            motor1.drive(20)
-            motor2.drive(-20)
+            motor1.drive(-20)
+            motor2.drive(20)
+    motor1.drive(speed)
+    motor2.drive(speed)
