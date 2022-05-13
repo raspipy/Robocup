@@ -9,7 +9,7 @@ class json_loader:
     def __init__(self, file):
         self.file = file
 
-    def load(self, kleurensensor=bool()):
+    def load(self, kleurensensor=bool(), blik=bool()):
         #load a .json file
         f = open(self.file,"r")
         data = json.loads(f.read())
@@ -19,6 +19,9 @@ class json_loader:
             result = data["filter"]
         
             return result
+        elif blik:
+            return data["blik"]
+            
         else:
             result_black = None
             for i in data["black"]:
@@ -33,12 +36,14 @@ class json_loader:
             f.close()
             return results        
 
-    def write(self, data, kleurensensor, indent ):
+    def write(self, data, kleurensensor,blik=bool(), indent ):
         #write data to .json file
         with open(self.file,"r+") as f:
             json_data = json.loads(f.read())
             if kleurensensor:
                 json_data["filter"] = data
+            elif blik:
+                json_data["blik"] = data
 
             else:        
                 for i in range(1,9):
