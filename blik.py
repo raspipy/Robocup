@@ -17,6 +17,7 @@ def find_blik(distance, speed, motor1, motor2):
     motor1.drive(0)
     motor2.drive(0)
     if (json_loader("classes/calibratie_waarden.json").load(False, True) == 1):
+        json_loader("classes/calibratie_waarden.json").write(0, False, True, 4)
         while ultrasonesensor.get_data() >= distance:
             e = ultrasonesensor.get_data()
             motor1.drive(-20)
@@ -28,6 +29,7 @@ def find_blik(distance, speed, motor1, motor2):
             motor1.drive(-20)
             motor2.drive(20)
     else:
+        json_loader("classes/calibratie_waarden.json").write(1, False, True, 4)
         while ultrasonesensor.get_data() >= distance:
             e = ultrasonesensor.get_data()
             motor1.drive(20)
