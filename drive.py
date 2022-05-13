@@ -34,7 +34,7 @@ enabled = True
 first_black = False
 motor1.drive(basespeed)
 motor2.drive(basespeed)
-time.sleep(0.5)
+time.sleep(0.4)
 while True:
     position = lijnsensor.get_position()
     color1 = kleurensensoren.get_data()
