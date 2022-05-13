@@ -16,7 +16,8 @@ def find_blik(distance, speed, motor1, motor2):
     if (randomint == 1):
         #motor1.drive(10)
         #if ultrasonesensor.get_data() <= distance:
-        print("E")
+        print(ultrasonesensor.get_data())
+
         while ultrasonesensor.get_data() <= distance:
             motor1.drive(-20)
             print(ultrasonesensor.get_data())
@@ -29,7 +30,7 @@ def find_blik(distance, speed, motor1, motor2):
     else:
        # motor1.drive(-10)
         #if ultrasonesensor.get_data() <= distance:
-        print("E")
+        print(ultrasonesensor.get_data())
         while ultrasonesensor.get_data() <= distance:
             motor1.drive(20)
             print(ultrasonesensor.get_data())
