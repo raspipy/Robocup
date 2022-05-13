@@ -33,8 +33,8 @@ sensitivity = float(input("enter sensitivity: "))
 enabled = True
 main_loop = True
 first_black = False
-motor1.drive(basespeed)
-motor2.drive(basespeed)
+#motor1.drive(basespeed)
+#motor2.drive(basespeed)
 time.sleep(0.4)
 while main_loop:
     position = lijnsensor.get_position()
