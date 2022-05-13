@@ -36,7 +36,7 @@ class json_loader:
             f.close()
             return results        
 
-    def write(self, data, kleurensensor,blik=bool(), indent ):
+    def write(self, data, kleurensensor,blik, indent):
         #write data to .json file
         with open(self.file,"r+") as f:
             json_data = json.loads(f.read())
@@ -64,4 +64,4 @@ class json_loader:
 
 if __name__ == "__main__":
     print(json_loader("classes/calibratie_waarden.json").load(True))
-    json_loader("classes/calibratie_waarden.json").write(['Red', [[189, 249], [79, 98], [29, 41]]],True, 2)
+    json_loader("classes/calibratie_waarden.json").write(['Red', [[189, 249], [79, 98], [29, 41]]],True,False, 2)
