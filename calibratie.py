@@ -56,7 +56,7 @@ print(data_white)
 #############################
 
 full_data = [data,data_white]
-json_loader("./classes/calibratie_waarden.json").write(full_data, False, 4)
+json_loader("./classes/calibratie_waarden.json").write(full_data, False, False, 4)
 #-------------------------------------------------------------------------------------------------------------
 
 for i in range(0,3):
