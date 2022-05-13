@@ -39,7 +39,8 @@ while True:
     color1 = kleurensensoren.get_data()
     color2 = kleurensensoren.get_data()
     if color1[0] == "Geel" and color2[0] == "Geel":
-        print("geel")
+        if first_black == False:
+            print("geel")
         while enabled:
             begin_tijd = time.time()
             color1 = kleurensensoren.get_data()
