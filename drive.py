@@ -42,7 +42,7 @@ while main_loop:
     color2 = kleurensensoren.get_data()
     if color1[0] == "Geel" and color2[0] == "Geel":
         if color1[0] == "Geel" and color2[0] == "Geel" and color1[1] == "Geel" and color2[1] == "Geel":
-            find_blik(10, basespeed, motor1, motor2)
+            find_blik(30, basespeed, motor1, motor2)
             main_loop = False
             break
             
