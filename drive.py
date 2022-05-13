@@ -36,7 +36,7 @@ motor2.drive(basespeed)
 time.sleep(0.5)
 while True:
     position = lijnsensor.get_position()
-    colors = kleurensensoren.get_data() + kleurensensoren.get_data() / 2
+    colors = kleurensensoren.get_data()
     if colors[0] == "Geel":
         print("geel")
         while enabled:
