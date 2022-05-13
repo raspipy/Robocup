@@ -5,8 +5,8 @@ GPIO.setwarnings(False)
 from classes.ultrasonesensor import ultrasonesensor
 from classes.motor import motor
 import time
-motor1 = motor([10,12,33,8])
-motor2 = motor([35,37,32,8])
+motor1 = motor([10,12,33,8], 11)
+motor2 = motor([35,37,32,8], 11)
 
 ultrasonesensor = ultrasonesensor(16)
 
