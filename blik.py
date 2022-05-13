@@ -10,7 +10,7 @@ motor2 = motor([35,37,32,8], 11)
 
 ultrasonesensor = ultrasonesensor(16)
 
-randomint = random.random(0,1)
+randomint = random.randint(0,1)
 def find_blik(distance, speed):
     if (randomint == 1):
         motor1.drive(10)
