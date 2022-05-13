@@ -19,8 +19,8 @@ GPIO.setwarnings(False)
 #############################
 lijnsensor = lijnsensor([11, 13, 15, 19, 21, 23, 29, 31])
 kleurensensoren = kleurensensor([40, 38, 36, 26], [22, 18])
-motor2 = motor([35,37,32,8], 10)
-motor1 = motor([10,12,33,8], 10)
+motor2 = motor([35,37,32,8], 11)
+motor1 = motor([10,12,33,8], 11)
 ultrasonesensor = ultrasonesensor(16)
 basespeed = int(input("BaseSpeed: "))
 
