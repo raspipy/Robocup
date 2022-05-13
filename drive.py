@@ -42,6 +42,7 @@ while True:
     if color1[0] == "Geel" and color2[0] == "Geel":
         if color1[0] == "Geel" and color2[0] == "Geel" and color1[1] == "Geel" and color2[1] == "Geel":
             find_blik(10, basespeed, motor1, motor2)
+            break
         if first_black == False:
             print("geel")
         while enabled:
