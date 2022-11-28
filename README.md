@@ -3,7 +3,7 @@
 Robocup code
 
 Deze Github repository bevat de code van W.A.L.D.O onze Raspberry PI robot.
-![alt W.A.L.D.O](https://i.ibb.co/5c3qH5n/afbeelding-2022-11-28-111921678.png)
+![alt W.A.L.D.O](https://camo.githubusercontent.com/26e4096333e336a8ea806887552a10817189d9b778c8f5cc0439d53f641c026d/68747470733a2f2f692e6962622e636f2f3563337148356e2f61666265656c64696e672d323032322d31312d32382d3131313932313637382e706e67)
 
 # Ultrasonensensor
 
