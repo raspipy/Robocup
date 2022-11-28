@@ -24,7 +24,13 @@ class json_loader:
             
         else:
             result_black = None
-            for i in data["black"]:
+            
+            # Temporary ga het verbeteren later
+            for i in data:
+                result_black = data["black"][0]
+                result_white = data["white"][0]
+
+            """for i in data["black"]:
                 result_black = data["black"][0]
             for i in data["white"]:
                 result_white = data["white"][0]
@@ -32,8 +38,10 @@ class json_loader:
             for i in result_black:
                 results[0].append(result_black[i])
             for i in result_white:
-                results[1].append(result_white[i])
+                results[1].append(result_white[i])"""
+           
             f.close()
+           
             return results        
 
     def write(self, data, kleurensensor, blik, indent):
