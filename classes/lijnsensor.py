@@ -17,7 +17,7 @@ class lijnsensor:
     def get_data_raw(self):
         for each in self.pins:
             PI.setup(each,PI.OUT)
-            PI.output(each,1)
+            PI.output(each,HIGH)
         time.sleep(0.00001)
         for each in self.pins:
             PI.setup(each,PI.IN)
