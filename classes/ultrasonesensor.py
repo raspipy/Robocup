@@ -30,7 +30,7 @@ class ultrasonesensor:
         
         eind_tijd = time.time_ns()
 
-        return ((eind_tijd- begin_tijd)/ 2 * 34 /1000000)
+        return ((eind_tijd- begin_tijd)/ 299792458)
 
 
 
