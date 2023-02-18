@@ -3,6 +3,10 @@
 
 
 void detect_bottle(int pin){
-    Distance(pin)
+    if (Distance() <= 10){
+
+        setupMotor;
+
+    }
 
 }

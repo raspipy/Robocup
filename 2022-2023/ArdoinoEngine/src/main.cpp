@@ -1,7 +1,9 @@
 #include <Arduino.h>
 #include "header.h"
+#include "data.cpp"
 
 void setup() {
+  
   Serial.begin(9600);
 
   setupMotor();
