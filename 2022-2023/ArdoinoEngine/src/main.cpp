@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include "header.h"
-#include "data.cpp"
 
 void setup() {
   
