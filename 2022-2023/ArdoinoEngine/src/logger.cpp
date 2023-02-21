@@ -11,5 +11,4 @@ void IncrementRound(LinkedList<int> List){
 }
 void NewStep(LinkedList<int> List){
     List.add(0);
-
 }
