@@ -1,4 +1,9 @@
 #include <Arduino.h>
+#include <LinkedList.h>
+// deze lib's moet je niet meer importen in andere files zolang header/h geimporteerd is
+
+
+
 void setupLineSensor();
 float getPos();
 void updateLineColor();

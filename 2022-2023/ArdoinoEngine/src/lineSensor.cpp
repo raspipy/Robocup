@@ -1,9 +1,6 @@
 #include <Arduino.h>
 #include "header.h"
-
-
 #define led 22  //digital pin where conected whit lineSensor: QRE-LED
-
 #include <math.h>
 
 int lineSensorPins[8] = {A0,A1,A2,A3,A4,A5,A6,A7}; //the analog pins conected to the sensor
