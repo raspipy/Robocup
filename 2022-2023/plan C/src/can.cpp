@@ -33,7 +33,7 @@ void DestroyCan(){
     Serial.println("Destroying can!");
     SetMotorSpeedL(-60);
     SetMotorSpeedR(60);
-    while (GetDist()>200){Serial.println(GetDist());}
+    while (GetDist()>200){;}
     SetMotorSpeedL(0);
     SetMotorSpeedR(0);
     delay(10000);

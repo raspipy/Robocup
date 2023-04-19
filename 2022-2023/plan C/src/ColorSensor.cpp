@@ -43,60 +43,67 @@ void SetupColorSensor(){
     digitalWrite(TCS_S2,HIGH);
     digitalWrite(TCS_S3,HIGH);
 
+    LoadProm();
 }
 
-void Callibrate(int a){
-    if (a == 3){
-        for(int i = 0;i<5000;i++){
-            ColorGreenAVGsens0 += ReadPWM(TCS_OUT_0);
-            ColorGreenAVGsens1 += ReadPWM(TCS_OUT_1);
-        }
-        ColorGreenAVGsens0 /= 5000;
-        ColorGreenAVGsens1 /= 5000;
-        Serial.println("Done.");
 
+void CalbWhite(){
+    for(int i = 0;i<5000;i++){
+        ColorWhiteAVGsens0 += ReadPWM(TCS_OUT_0);
+        ColorWhiteAVGsens1 += ReadPWM(TCS_OUT_1);
     }
-    if (a == 4){
-        for(int i = 0;i<5000;i++){
-                ColorWhiteAVGsens0 += ReadPWM(TCS_OUT_0);
-                ColorWhiteAVGsens1 += ReadPWM(TCS_OUT_1);
-            }
-        ColorWhiteAVGsens0 /= 5000;
-        ColorWhiteAVGsens1 /= 5000;
-
-        Serial.println("Done.");
-
-    }
-    if (a == 5){
-        for(int i = 0;i<5000;i++){
-            ColorBlackAVGsens0 += ReadPWM(TCS_OUT_0);
-            
-            ColorBlackAVGsens1 += ReadPWM(TCS_OUT_1);
-            }
-        Serial.println(ColorBlackAVGsens0);
-        ColorBlackAVGsens0 /= 5000;
-        Serial.println("result");
-        Serial.println(ColorBlackAVGsens1);
-    }
-
+    ColorWhiteAVGsens0 /= 5000;
+    ColorWhiteAVGsens1 /= 5000;
+    writeIntIntoEEPROM(8+10,(uint16_t) ColorWhiteAVGsens0);
+    writeIntIntoEEPROM(10+10,(uint16_t) ColorWhiteAVGsens1);
 }
-
-void WriteProm(){
-    EEPROM.write(0+10,(uint8_t) ColorBlackAVGsens0);
-    EEPROM.write(1+10,(uint8_t) ColorBlackAVGsens1);
-    EEPROM.write(2+10,(uint8_t) ColorGreenAVGsens0);
-    EEPROM.write(3+10,(uint8_t) ColorGreenAVGsens1);
-    EEPROM.write(4+10,(uint8_t) ColorWhiteAVGsens0);
-    EEPROM.write(5+10,(uint8_t) ColorWhiteAVGsens1);
+void CalbGreen(){
+    for(int i = 0;i<5000;i++){
+        ColorGreenAVGsens0 += ReadPWM(TCS_OUT_0);
+        ColorGreenAVGsens1 += ReadPWM(TCS_OUT_1);
+    }
+    ColorGreenAVGsens0 /= 5000;
+    ColorGreenAVGsens1 /= 5000;
+    writeIntIntoEEPROM(4+10,(uint16_t) ColorGreenAVGsens0);
+    writeIntIntoEEPROM(6+10,(uint16_t) ColorGreenAVGsens1);
+}
+void CalbBlack(){
+    for(int i = 0;i<5000;i++){
+        ColorBlackAVGsens0 += ReadPWM(TCS_OUT_0);
+        
+        ColorBlackAVGsens1 += ReadPWM(TCS_OUT_1);
+    }
+    Serial.println(ColorBlackAVGsens0);
+    ColorBlackAVGsens0 /= 5000;
+    Serial.println("result");
+    Serial.println(ColorBlackAVGsens0);
+    ColorBlackAVGsens1 /= 5000;
+    writeIntIntoEEPROM(0+10,(uint16_t) ColorBlackAVGsens0);
+    writeIntIntoEEPROM(2+10,(uint16_t) ColorBlackAVGsens1);
 }
 
 void LoadProm(){
-    ColorBlackAVGsens0 = EEPROM.read(0+10);
-    ColorBlackAVGsens1 = EEPROM.read(1+10);
-    ColorGreenAVGsens0 = EEPROM.read(2+10);
-    ColorGreenAVGsens1 = EEPROM.read(3+10);
-    ColorWhiteAVGsens0 = EEPROM.read(4+10);
-    ColorWhiteAVGsens1 = EEPROM.read(5+10);
+    ColorBlackAVGsens0 = readIntFromEEPROM(0+10);
+    ColorBlackAVGsens1 = readIntFromEEPROM(2+10);
+    ColorGreenAVGsens0 = readIntFromEEPROM(4+10);
+    ColorGreenAVGsens1 = readIntFromEEPROM(6+10);
+    ColorWhiteAVGsens0 = readIntFromEEPROM(8+10);
+    ColorWhiteAVGsens1 = readIntFromEEPROM(10+10);
+}
+
+int readIntFromEEPROM(int address)
+{
+  byte byte1 = EEPROM.read(address);
+  byte byte2 = EEPROM.read(address + 1);
+  return (byte1 << 8) + byte2;
+}
+
+void writeIntIntoEEPROM(int address, int number)
+{ 
+  byte byte1 = number >> 8;
+  byte byte2 = number & 0xFF;
+  EEPROM.write(address, byte1);
+  EEPROM.write(address + 1, byte2);
 }
 
 int ReadPWM(uint8_t readpin){
