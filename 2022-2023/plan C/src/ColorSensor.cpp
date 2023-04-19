@@ -45,56 +45,43 @@ void SetupColorSensor(){
 
 }
 
+void Callibrate(int a){
+    if (a == 3){
+        for(int i = 0;i<5000;i++){
+            ColorGreenAVGsens0 += ReadPWM(TCS_OUT_0);
+            ColorGreenAVGsens1 += ReadPWM(TCS_OUT_1);
+        }
+        ColorGreenAVGsens0 /= 5000;
+        ColorGreenAVGsens1 /= 5000;
+        Serial.println("Done.");
+
+    }
+    if (a == 4){
+        for(int i = 0;i<5000;i++){
+                ColorWhiteAVGsens0 += ReadPWM(TCS_OUT_0);
+                ColorWhiteAVGsens1 += ReadPWM(TCS_OUT_1);
+            }
+        ColorWhiteAVGsens0 /= 5000;
+        ColorWhiteAVGsens1 /= 5000;
+
+        Serial.println("Done.");
+
+    }
+    if (a == 5){
+        for(int i = 0;i<5000;i++){
+            ColorBlackAVGsens0 += ReadPWM(TCS_OUT_0);
+            
+            ColorBlackAVGsens1 += ReadPWM(TCS_OUT_1);
+            }
+        Serial.println(ColorBlackAVGsens0);
+        ColorBlackAVGsens0 /= 5000;
+        Serial.println("result");
+        Serial.println(ColorBlackAVGsens1);
+    }
+
+}
+
 void WriteProm(){
-    
-    Serial.println("Start calibration color sensors...");
-    Serial.println("Set colorSensors on black...");
-    for(int i = 0;i<5000;i++){
-        ColorBlackAVGsens0 += ReadPWM(TCS_OUT_0);
-        
-        ColorBlackAVGsens1 += ReadPWM(TCS_OUT_1);
-    }
-    Serial.println(ColorBlackAVGsens0);
-    ColorBlackAVGsens0 /= 5000;
-    Serial.println("result");
-    Serial.println(ColorBlackAVGsens0);
-    ColorBlackAVGsens1 /= 5000;
-    Serial.println("Set colorSensors on green...");
-    delay(5000);
-    for(int i = 0;i<5000;i++){
-        ColorGreenAVGsens0 += ReadPWM(TCS_OUT_0);
-        ColorGreenAVGsens1 += ReadPWM(TCS_OUT_1);
-    }
-    ColorGreenAVGsens0 /= 5000;
-    ColorGreenAVGsens1 /= 5000;
-    Serial.println("Set colorSensors on white...");
-    delay(5000);
-    for(int i = 0;i<5000;i++){
-        ColorWhiteAVGsens0 += ReadPWM(TCS_OUT_0);
-        ColorWhiteAVGsens1 += ReadPWM(TCS_OUT_1);
-    }
-    ColorWhiteAVGsens0 /= 5000;
-    ColorWhiteAVGsens1 /= 5000;
-    Serial.println("Done calibrating colorsensors");
-
-    Serial.print("BlackAVG:");
-    Serial.print(ColorBlackAVGsens0);
-    Serial.print("     ");
-    Serial.print(ColorBlackAVGsens1);
-    Serial.println("");
-
-    Serial.print("WhiteAVG:");
-    Serial.print(ColorWhiteAVGsens0);
-    Serial.print("     ");
-    Serial.print(ColorWhiteAVGsens1);
-    Serial.println("");
-
-    Serial.print("GreenAVG:");
-    Serial.print(ColorGreenAVGsens0);
-    Serial.print("     ");
-    Serial.print(ColorGreenAVGsens1);
-    Serial.println("");
-
     EEPROM.write(0+10,(uint8_t) ColorBlackAVGsens0);
     EEPROM.write(1+10,(uint8_t) ColorBlackAVGsens1);
     EEPROM.write(2+10,(uint8_t) ColorGreenAVGsens0);

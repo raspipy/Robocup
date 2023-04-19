@@ -7,8 +7,14 @@ void UpdateRawData();
 void UpdateSensorData();
 void CalculateError();
 float GetError();
-
 int16_t GetRawData();
+
+
+// Main.cpp
+int Drive();
+
+//Reciever.cpp
+void StartCommands();
 
 //motor.cpp
 void SetupMotor();
@@ -19,6 +25,7 @@ void SetMotorSpeedL(int);
 void SetupColorSensor();
 int ReadPWM(uint8_t);
 void WriteProm();
+void Callibrate();
 void LoadProm();
 int ReadColorsens0();
 int ReadColorsens1();
