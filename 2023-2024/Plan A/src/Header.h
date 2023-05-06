@@ -13,3 +13,12 @@ void turn45right();
 void turn45left();
 void SeekForBlick();
 void empty();
+
+//linesensor.cpp
+void EnableLed();
+void AutoCalibrate(int);
+void UpdateRawData();
+int16_t GetRawData();
+void UpdateSensorData();
+void CalculateError();
+float GetError();
